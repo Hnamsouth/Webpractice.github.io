@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- <script>
+        var Ndate = new Date();
+        // lay ngay, thang, nam
+        var Time = Ndate.getDate() + " " + Ndate.getMonth() + 1 + " " + Ndate.getFullYear();
+        /*var Nmonth = Ndate.getMonth() + 1;
+        var Nyear = Ndate.getFullYear();
+        console.log(Nday + " " + Nmonth + " " + Nyear)
+        var s = Nday + " " + Nmonth + " " + Nyear;*/
+        var dongho = document.getElementsByClassName('clock')
+        dongho.innerHTML = Time;
+        console.log(dongho)
+    </script> -->
+    <link rel="stylesheet" href="1.css">
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .tbody {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+        }
+        
+        a {
+            color: #415AB0;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: black;
+            text-decoration: underline;
+        }
+        
+        .search-bar {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 1280px;
+            margin: 0 auto;
+            padding: 10px 5px 3px 5px;
+        }
+        
+        .search2 {
+            justify-content: center;
+            border: 1px solid rgba(0, 0, 0, 0.8) !important;
+            border-radius: 40px;
+            width: 360px;
+            height: 35px;
+        }
+        
+        button {
+            margin-top: 2.5px;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            border: none;
+            background-color: white;
+            outline: none;
+        }
+        
+        button:hover {
+            box-shadow: 0 0 1px 1px #1589ee;
+        }
+        
+        input {
+            background-color: white;
+            border: none;
+            width: 280px;
+            height: 30px;
+            flex-direction: row-reverse;
+            border-image: url();
+            text-align: left;
+            outline: none;
+        }
+        
+        .header {
+            float: right;
+        }
+        
+        .st2 {
+            width: 1280px;
+            padding: 10px;
+        }
+        
+        .st3 {
+            padding: 10px;
+            max-width: 1200px;
+            display: flex;
+        }
+        
+        .body-left {
+            overflow: auto;
+            padding: 10px;
+            width: 840px;
+        }
+        
+        .body-right {
+            padding: 10px;
+            font-size: 12px;
+        }
+        
+        .navud {
+            width: 200px;
+            height: 30px;
+            font-size: 12px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5 px;
+        }
+        
+        .navud:hover {
+            background-color: #dbdbdb;
+            color: black;
+        }
+        
+        .nav-under {
+            padding: 10px;
+            display: flex;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="tbody">
+        <div class="search-bar">
+            <div class="search2" style="display:flex ;">
+
+                <input type="text" placeholder="Tìm kiếm">
+                <button><ion-icon style="align-items: centrer;" name="search-outline"></ion-icon></button>
+            </div>
+        </div>
+        <div style="width:100% ;border-bottom:1px solid rgb(112, 112, 112); margin:10px"></div>
+        <div class="header st2">
+            <img src="img/logo_Tiki_1.png">
+            <a style="float: right;margin-top: 70px;" href="https://tiki.vn/lien-he/gui-yeu-cau">Gửi yêu cầu hỗ trợ</a>
+        </div>
+        <!-- thanh dieu huong -->
+        <div class="nav st2">
+            <a href="https://hotro.tiki.vn/s/topic/0TO5Y00000BiIPGWA3/%C4%91%E1%BA%B7t-h%C3%A0ng-v%C3%A0-thanh-to%C3%A1n">ĐẶT HÀNG VÀ THANH TOÁN</a> >
+            <a href="https://hotro.tiki.vn/s/topic/0TO5Y00000BiIPXWA3/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-%C4%91%E1%BA%B7t-h%C3%A0ng"> HƯỚNG DẪN ĐẶT HÀNG</a>
+        </div>
+        <div class="st3">
+            <!-- content left -->
+            <div class="body-left">
+                <h3>Làm thế nào để tôi đặt hàng qua website Tiki?</h3>
+
+                <div style="display: flex;align-items: center;color: #070098">
+                    <ion-icon name="time-outline"></ion-icon> <span style="margin-left:5px ;font-size:10px;">24 Thg 5, 2022</span><br> </div>
+                <p><br> Quý khách có thể đặt hàng trực tuyến ở website Tiki thông qua các bước đặt hàng cơ bản.<br></p>
+                <p><br>Vui lòng tham khảo thông tin chi tiết về từng bước đặt hàng như sau:<br></p><br>
+                <p><b>1. Đăng nhập tài khoản tại Tiki:</b></p>
+                <p><br> Quý khách vui lòng đăng nhập bằng tài khoản đã có ở Tiki hoặc đăng nhập thông qua Facebook/ Zalo/ Google. Trong trường hợp chư<a href="https://tiki.vn/customer/account/create/"> đăng ký tài khoản</a> , quý khách có thể chọn dòng “Tạo
+                    tài khoản” để đăng ký tài khoản tại Tiki.<br>
+                </p>
+                <p><br>Sau khi đã hoàn tất, quý khách có thể bấm vào chữ “Tạo tài khoản” để hoàn tất quá trình đăng ký.<br></p>
+                <p><br><b>2. Tìm kiếm sản phẩm:</b><br></p>
+                <p><br>Quý khách có thể tìm sản phẩm theo 3 cách:<br></p>
+                <p><br>
+                    <ul>
+                        <li>Gõ tên sản phẩm vào thanh tìm kiếm.</li>
+                        <li>Tìm theo danh mục.</li>
+                        <li>Tìm theo các sản phẩm mới nhất, bán chạy hoặc danh mục phổ biến trên từng ngành hàng.</li>
+                    </ul><br>
+                </p>
+                <p><b>3. Thêm sản phẩm vào giỏ hàng:</b><br></p>
+                <p><br>Khi đã tìm được sản phẩm mong muốn, quý khách vui lòng bấm vào hình hoặc tên sản phẩm để vào được trang thông tin chi tiết của sản phẩm, sau đó:</p><br>
+                <p>
+                    <ul>
+                        <li>Kiểm tra thông tin sản phẩm: giá, thông tin khuyến mãi.</li>
+                        <li>Chọn số lượng mong muốn.</li>
+                        <li>Chọn số lượng mong muốn.</li>
+                    </ul><br>
+                </p>
+                <p>Khi đã thao tác bỏ sản phẩm đầu tiên vào đơn hàng, quý khách vui lòng thực hiện các bước sau để thêm các sản phẩm khác vào giỏ hàng: <br></p>
+
+                <p>
+                    <ul><br>
+                        <li>Chọn vào logo Tiki để trở về trang chủ hoặc gõ tìm kiếm sản phẩm trên thanh công cụ.</li>
+                        <li>Thêm sản phẩm vào giỏ hàng bằng cách chọn số lượng và “Chọn mua”.</li><br>
+                        <img width="380" height="280" src="https://hotro.tiki.vn/servlet/rtaImage?eid=ka05h000000vH9l&feoid=00N5Y00000TZwdJ&refid=0EM5Y000003UhFX" alt="">
+
+                    </ul><br>
+                </p>
+                <p><br><i>Quá trình này có thể lặp lại cho đến khi quý khách hoàn tất việc bỏ tất cả các sản phẩm cần đặt mua vào giỏ hàng*.</i><br></p>
+                <p><br><b>4. Kiểm tra giỏ hàng và đặt hàng:</b><br></p>
+                <p><br>Quý khách có thể đặt các sản phẩm khác nhau trong 1 giỏ hàng thành 1 đơn hàng, các sản phẩm trong giỏ hàng sẽ được đóng thành 1 kiện hàng (nếu sản phẩm thuộc cùng 1 nhà cung cấp/kho xử lý) và giao đến địa chỉ quý khách đã đăng ký.</p>
+                <p><br>Sau khi quý khách đã có đủ sản phẩm cần đặt trong giỏ hàng, vui lòng mã giảm giá (nếu có) và tiếp tục các bước sau để đặt hàng:<br></p>
+                <p><br>
+                    <ul>
+                        <li>Chọn sản phẩm quý khách muốn mua và điều chỉnh số lượng phù hợp.</li>
+                        <li>Bấm “Mua hàng” để bắt đầu đặt hàng.</li>
+                    </ul><br>
+                    <img width="510" height="270" src=" https://hotro.tiki.vn/servlet/rtaImage?eid=ka05h000000vH9l&feoid=00N5Y00000TZwdJ&refid=0EM5Y000003UhFc" alt="">
+                    <br>
+                </p>
+                <p><br><b>5. Điều chỉnh địa chỉ giao hàng:</b><br></p><br>
+                <img width="510" height="270" src="https://hotro.tiki.vn/servlet/rtaImage?eid=ka05h000000vH9l&feoid=00N5Y00000TZwdJ&refid=0EM5Y000003UhFh" alt="">
+                <p><br><b>6. Chọn phương thức thanh toán, sử dụng Tiki Xu và “Đặt Mua”:</b><br></p>
+                <p><br>Tiki hỗ trợ giao hàng và thanh toán tận nơi cho các đơn hàng có tổng trị giá từ 20.000.000đ trở xuống trên toàn quốc. Quý khách vui lòng tham khảo thêm tại: <a href="https://tiki.force.com/s/topic/0TO5Y00000BiIPYWA3/thanh-to%C3%A1n-t%E1%BA%A1i-tiki">Các Phương Thức Thanh Toán</a>                    <br></p>
+                <p><br>Sau khi hoàn tất quá trình chọn phương thức thanh toán, vui lòng kiểm tra lại các thông tin sau: xuất hóa đơn VAT (nếu có), địa chỉ nhận hàng, giá khuyến mãi, tổng tiền. <br></p>
+                <p><br>Nếu các thông tin trên đã chính xác, quý khách vui lòng bấm “Đặt Mua”, hệ thống sẽ bắt đầu tiến hành tạo đơn hàng dựa trên các thông tin quý khách đã đăng ký. <br></p>
+                <br>
+                <br><img width="440" height="313" src="https://hotro.tiki.vn/servlet/rtaImage?eid=ka05h000000vH9l&feoid=00N5Y00000TZwdJ&refid=0EM5Y000003UhFr" alt="">
+                <img width="437" height="370" src="https://hotro.tiki.vn/servlet/rtaImage?eid=ka05h000000vH9l&feoid=00N5Y00000TZwdJ&refid=0EM5h000004Iltw" alt="">
+                <p><br><b>7. Kiểm tra và xác nhận đơn hàng:</b> <br></p>
+                <p>Sau khi hoàn tất cả bước đặt mua, hệ thống sẽ gửi đến quý khách một mã số đơn hàng và thông báo thời gian giao hàng dự kiến, quý khách có thể kiểm tra lại đơn hàng bằng cách bấm vào dòng “đơn hàng của tôi” hoặc email xác nhận đơn hàng.
+                    <br></p>
+                <p><br>8. Theo dõi tình trạng đơn hàng: <br></p>
+                <p><br>Sau khi đặt hàng thành công, quý khách có thể theo dõi tiến trình xử lý và vận chuyển của đơn hàng bằng cách đăng nhập vào đường link: <a href="http://tiki.vn/tracking-order-form.">http://tiki.vn/tracking-order-form.</a></p>
+                <p><br><b><i>Lưu ý:</i></b> <br></p>
+                <p><br>Tiki khuyến khích quý khách tự thao tác đặt hàng để có thể tham gia ưu đãi và theo dõi tình trạng đơn hàng. Trường hợp quý khách yêu cầu Tiki hỗ trợ đặt hàng thay Tiki rất tiếc chưa áp dụng Tiki Xu, bookcare, coupon cho đơn hàng. <br></p>
+                <div class="nav-under">
+                    <div class="nav-under-1 navud"><a href="https://hotro.tiki.vn/s/topic/0TO5Y00000BiIPGWA3/%C4%91%E1%BA%B7t-h%C3%A0ng-v%C3%A0-thanh-to%C3%A1n">ĐẶT HÀNG VÀ THANH TOÁN</a></div>
+                    <div class="nav-under-2 navud"><a href="https://hotro.tiki.vn/s/topic/0TO5Y00000BiIPXWA3/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-%C4%91%E1%BA%B7t-h%C3%A0ng">HƯỚNG DẪN ĐẶT HÀNG</a></div>
+                </div>
+            </div>
+            <!-- content right -->
+            <div class="body-right">
+                <h3>Trending Articles</h3>
+                <p><a href="">Chính sách bảo hành tại Tiki như thế nào?</a></p>
+                <p><a href="">Điều khoản sử dụng</a></p>
+                <p><a href="">Chính sách đổi trả sản phẩm tại Tiki như thế nào?</a></p>
+                <p><a href="">Làm thế nào để tôi đăng ký xuất hóa đơn khi mua hàng tại Tiki?</a></p>
+                <p><a href="">Làm cách nào để sử dụng Tiki Xu và mã giảm giá trên website ?</a></p><br>
+                <h3>Trending Articles</h3><br>
+                <p><a href="">Làm thế nào để tôi đăng ký xuất hóa đơn khi mua hàng tại Tiki?</a></p>
+                <p><a href="">Làm cách nào để sử dụng Tiki Xu và mã giảm giá trên website ?</a></p>
+                <p><a href="">Tiki hoàn tiền trong bao lâu?</a></p>
+                <p><a href="">Làm thế nào để tôi đặt hàng qua website Tiki?</a></p>
+                <p><a href="">Tiki Xu là gì? Giá trị quy đổi như thế nào?</a></p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

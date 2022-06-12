@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+}
+
+.theader {
+    text-align: center;
+    position: relative;
+    left: 50%;
+}
+
+.header {
+    -moz-transition: all 0.25s cubic-bezier(0.46, 0.01, 0.14, 1.35);
+    -o-transition: all 0.25s cubic-bezier(0.46, 0.01, 0.14, 1.35);
+    -webkit-transition: all 0.25s cubic-bezier(0.46, 0.01, 0.14, 1.35);
+    transition: all 0.25s cubic-bezier(0.46, 0.01, 0.14, 1.35);
+    white-space: nowrap;
+    font-family: "Lato";
+    font-weight: 900;
+    font-size: 64px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ff4851;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.header:after {
+    content: attr(href);
+    -moz-transition: all 0s linear;
+    -o-transition: all 0s linear;
+    -webkit-transition: all 0s linear;
+    transition: all 0s linear;
+    overflow: hidden;
+    background-color: #ff4851;
+    text-transform: lowercase;
+    position: absolute;
+    font-size: 25px;
+    letter-spacing: 0;
+    font-weight: 500;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    display: inline-block;
+    -moz-transform: translate(-15px, 100%);
+    -ms-transform: translate(-15px, 100%);
+    -webkit-transform: translate(-15px, 100%);
+    transform: translate(-15px, 100%);
+    padding: 0 15px;
+    max-height: 0;
+    z-index: -1;
+}
+
+.header:before {
+    content: "";
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-transition: all 0.15s cubic-bezier(0.46, 0.01, 0.14, 1.35);
+    -o-transition: all 0.15s cubic-bezier(0.46, 0.01, 0.14, 1.35);
+    -webkit-transition: all 0.15s cubic-bezier(0.46, 0.01, 0.14, 1.35);
+    transition: all 0.15s cubic-bezier(0.46, 0.01, 0.14, 1.35);
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ff4851;
+    bottom: -5px;
+    z-index: -2;
+}
+
+.header:hover {
+    color: white;
+}
+
+.header:hover:before {
+    padding: 10px 15px;
+    margin-left: -15px;
+    bottom: -10px;
+    height: 100%;
+}
+
+.header:hover:after {
+    -moz-transition: all 0.5s cubic-bezier(0.46, 0.01, 0.14, 1.35) 0.3s;
+    -o-transition: all 0.5s cubic-bezier(0.46, 0.01, 0.14, 1.35) 0.3s;
+    -webkit-transition: all 0.5s cubic-bezier(0.46, 0.01, 0.14, 1.35);
+    -webkit-transition-delay: 0.3s;
+    transition: all 0.5s cubic-bezier(0.46, 0.01, 0.14, 1.35) 0.3s;
+    -moz-transform: translate(-15px, 50%);
+    -ms-transform: translate(-15px, 50%);
+    -webkit-transform: translate(-15px, 50%);
+    transform: translate(-15px, 50%);
+    padding: 10px 15px;
+    max-height: 30px;
+    opacity: 1;
+}
+
+.hoho {
+    position: relative;
+}
+
+a.hoho.all:before,
+a.hoho.all:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+a.hoho.all:before {
+    top: 0;
+    left: 0;
+    border-top: 2px solid #FF4851;
+    border-right: 2px solid #FF4851;
+    margin: -2px 1px 0 0;
+}
+
+a.hoho.all:after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid #FF4851;
+    border-left: 2px solid #FF4851;
+    margin: 0 0 -2px 1px;
+}
+
+a.hoho.all:hover:before {
+    transition: all 0.5s;
+    animation: first 0.3s forwards;
+    opacity: 1;
+}
+
+a.hoho.all:hover:after {
+    transition: all 0.5s;
+    animation: second 0.3s forwards;
+}
+
+@keyframes first {
+    0% {
+        width: 0%;
+        height: 0%;
+    }
+    25% {
+        width: 100%;
+        height: 0%;
+    }
+    50% {
+        width: 100%;
+        height: 100%;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes second {
+    0% {
+        width: 0%;
+        height: 0%;
+    }
+    50% {
+        width: 0%;
+        height: 0%;
+    }
+    75% {
+        width: 100%;
+        height: 0%;
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+        height: 102%;
+        opacity: 1;
+    }
+}
+
+a.hoho.two:before,
+a.hoho.two:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    transition: width 0.3s ease;
+}
+
+a.hoho.two:before {
+    bottom: 0;
+    right: 50%;
+}
+
+a.hoho.two:after {
+    bottom: 0;
+    left: 50%;
+}
+
+a.hoho.two:hover:after,
+a.hoho.two:hover:before {
+    width: 40%;
+    transition: width .2s ease;
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"> </script>
+    <script script nomodule src="https: // unkg .com / ionicons @ 5.5.2 / dist /ionicons/ionicons.js ">
+    </script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 10px;
+        }
+        
+        .header {
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            /* can chinh text vao giua */
+            padding: 20px;
+            /* cach tren va duoi 20px */
+            color: rgb(169, 169, 169);
+        }
+        
+        .header b {
+            background-color: rgb(255, 255, 255);
+        }
+        
+        .header img {
+            width: 17%;
+        }
+        
+        .nav {
+            /*overflow: hidden;*/
+            font-size: 40px;
+            padding: 8px;
+            text-align: center;
+            border-top: 1px solid rgb(79, 79, 79);
+            border-bottom: 1px solid rgb(79, 79, 79);
+        }
+        
+        .nav a {
+            margin-inline: 20px;
+            color: rgb(79, 79, 79);
+            text-decoration: none;
+        }
+        
+        .nav a:hover {
+            color: rgb(159, 34, 78);
+        }
+        
+        .content {
+            float: left;
+            padding: 10px;
+            max-width: 1130px;
+            box-sizing: border-box;
+            width: 100%;
+            margin: 0 auto;
+        }
+        /*.content .lsite a {
+            margin: 6px;
+            width: 50px;
+            height: 50px;
+            adding: 10px 22px 35px;
+            border-radius: 50%;
+            background: #fff;
+            position: relative;
+            border: 1px solid #e5e5e5;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 20%), 0 8px 16px rgb(0 0 0 / 20%);
+            box-sizing: border-box;
+        }*/
+        /*
+        .lsite a img {
+            width: 100%;
+            opacity: 0.85;
+        }
+        
+        .lsite a img:hover {
+            opacity: 1;
+        }
+        */
+        
+        .logo ion-icon {
+            font-size: 32px;
+            fill: rgb(145, 145, 145);
+            border-radius: 50%;
+            border: 0.5px solid rgb(176, 176, 176);
+            color: rgb(255, 255, 255);
+            /* outline: black;*/
+            /* shape-outside: ;*/
+            /* background-color: rgb(147, 144, 138);*/
+        }
+        
+        .facebook:hover {
+            fill: rgb(59, 89, 153);
+        }
+        
+        .twitter:hover {
+            fill: rgb(85, 172, 238);
+        }
+        
+        .lsite {
+            margin-top: 23px;
+            padding-right: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .canlayer {
+            float: left;
+            padding: 10px;
+        }
+        
+        .canlayer.bettwen {
+            width: 60%;
+        }
+        
+        .canlayer.Rsite {
+            width: 25%;
+        }
+        
+        .img a img {
+            width: 90%;
+        }
+        
+        .top {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header"> <img src="../Lab1/img/logo_site_share.png"></div>
+    <div class="nav">
+        <a href="">Thời sự</a>
+        <a href="">Khoa học</a>
+        <a href="">Kinh Doanh</a>
+    </div>
+    <div class="top">
+        <div class="content">
+            <!-- <div class="canlayer lsite">
+                <a href="https://www.facebook.com/congdongvnexpress"> <img src="../Session 1 - Lab/img/Facebook_Logo_(2019).png (1).webp" alt=""></a>
+                <a href="https://twitter.com/VnEnews"> <img src="../Session 1 - Lab/img/twitter_circle-512.webp" alt=""></a>
+            </div> -->
+            <div class="canlayer lsite">
+                <a class="logo" href="https://www.facebook.com/">
+                    <ion-icon class="facebook" ion-icon name="logo-facebook"> </ion-icon>
+                </a>
+                <a class="logo" href="https://www.facebook.com/">
+                    <ion-icon class="twitter" name="logo-twitter"></ion-icon>
+                </a>
+            </div>
+            <div class="canlayer bettwen">
+                <div class="text">
+                    <h1>Cầu thủ Hàn Quốc mất ngủ vì hòa Việt Nam</h1>
+                    <span style="color:rgb(138, 138, 138) ;"> UZBEKISTAN-</span> <b> Tiền đạo Park Jeong-in thất vọng đến mức không thể ngủ sau khi Hàn Quốc hòa Việt Nam tại U23 châu Á 2022.</b>
+                </div>
+                <div>
+                    <p>
+                        "Tôi không ngủ nổi sau trận đấu Việt Nam. Đây thực sự đó là những giây phút khó chịu bậc nhất trong sự nghiệp cầu thủ của tôi", Park nói với truyền thông Hàn Quốc hôm qua 6/6, một ngày sau trận đấu Việt Nam ở lượt hai bảng C.
+                    </p>
+                    <p>Hàn Quốc là đương kim vô địch, toàn thắng Việt Nam trong bốn lần đối đầu chính thức trước đó ở cấp độ U23. Trước trận, HLV Hwang Sun-hong tuyên bố sẽ thắng Việt Nam, như từng làm trước Malaysia ngày ra quân, để sớm giành vé vào tứ
+                        kết
+                    </p>
+                    <div class="picture">
+                        <img src="../Lab1/img/img1.jpg"> Park Jeong-in bị hậu vệ Việt Nam cản phá trong trận hòa 1-1 trên sân Lokomotiv, Tashkent, Uzbekistan ngày 5/6. Ảnh: <i>Lâm Thỏa</i>
+                    </div>
+                    <p>Với thế trận chủ động, cầm bóng trên 70% và tung ra gần 20 cú dứt điểm, đến phút 64 Hàn Quốc mở tỷ số nhờ công tiền đạo Cho Young-wook. Nhưng phút 78 họ lâm vào thế mất người, vì Lee Jin-yong nhận thẻ vàng thứ hai sau pha phạm lỗi
+                        với Nguyễn Văn Tùng. Chỉ còn 10 cầu thủ, các học trò của HLV Hwang lúng túng, và để Việt Nam chớp thời cơ gỡ hoà 1-1 từ cú sút một chạm của Vũ Tiến Long.</p>
+                    <p>"Trong trận đấu Việt Nam, tôi không đáp ứng được kỳ vọng ghi bàn. Vì vậy, tôi hiểu những chỉ trích nhắm vào mình. Là tiền đạo, nhiệm vụ của tôi là phải ghi bàn, nhưng đôi khi chúng ta gặp khó khăn trong việc thực hiện vai trò của mình.
+                        Tôi thực sự xin lỗi", Park nói thêm.</p>
+                    <p>Park sinh năm 2000, đang chơi cho Busan I Park FC. Anh được HLV Hwang Sun-hong coi là tiền đạo chủ lực, nhưng "tịt ngòi" qua cả hai trận đã đấu ở giải U23 châu Á. Trong trận Việt Nam, Park hai lần bỏ lỡ cơ hội ngon ăn. Đầu tiên, anh
+                        phá bẫy việt vị nhưng xử lý chậm, để Thanh Bình băng về cắt bóng. Tiếp đó, "số 10" đánh đầu đi chệch đích từ vị trí thuận lợi.</p>
+                    <p>"Tôi liên tục có các cơ hội, nhưng bỏ lỡ. Vì vậy, tôi bắt đầu cảm thấy lo nghĩ. Nếu tôi không thể ghi bàn, tôi sẽ gặp rắc rối. Ở trận gặp Việt Nam, tôi đã có phần vội vàng, mất bình tĩnh. Nếu là một tiền đạo, bạn không nên như vậy",
+                        Park nói rồi tiếp tục xin lỗi người hâm mộ Hàn Quốc.</p>
+                    <p>Hòa Việt Nam, Hàn Quốc có bốn điểm, đứng thứ hai bảng C. Ở loạt trận cuối ngày 8/6, đội bóng xứ kim chi sẽ gặp đối thủ bằng điểm nhưng xếp trên vì nhận ít thẻ hơn là Thái Lan. Park Jeong-in hứa sẽ chơi hết mình, ghi bàn giúp Hàn Quốc
+                        chiến thắng và vào tứ kết.</p>
+                    <div>
+                        <ul>
+                            <li><a href="https://vnexpress.net/lee-jin-yong-han-quoc-khong-thang-vi-loi-cua-toi-4472654.html">Lee Jin-yong: 'Hàn Quốc không thắng vì lỗi của tôi'</a> </li>
+                            <li><a href="https://vnexpress.net/steve-darby-toi-cu-tuong-u23-viet-nam-se-vo-tran-4472505.html">Steve Darby: 'Tôi cứ tưởng U23 Việt Nam sẽ vỡ trận' </a> </li>
+                            <li><a href="https://vnexpress.net/viet-nam-chua-chac-di-tiep-ke-ca-thang-malaysia-4472461.html">Việt Nam chưa chắc đi tiếp kể cả thắng Malaysia</a> </li>
+                            <li><a href="https://vnexpress.net/trong-tai-phat-nham-cau-thu-han-quoc-4472454.html">Trọng tài phạt nhầm cầu thủ Hàn Quốc </a> </li>
+                        </ul>
+                    </div>
+                    <div class="picture">
+                        <img src="../Lab1/img/Lich-dau-VCk-U23-Chau-A-1-7523-5731-6041-1654572291.jpg" alt="">
+                    </div>
+                    <div class="end">Lâm Thỏa (từ Tashkent)</div>
+                </div>
+            </div>
+            <div class="canlayer Rsite">
+                <div class="img">
+                    <a href="https://vnexpress.net/khach-san-u23-viet-nam-luu-tru-tai-uzbekistan-4471829.html"><img src="../Lab1/img/khach-san.jpg" title="Khách sạn U23 Việt Nam lưu trú tại Uzbekistan"></a>
+                    <a href="https://vnexpress.net/khach-san-u23-viet-nam-luu-tru-tai-uzbekistan-4471829.html">Khách sạn U23 Việt Nam lưu trú tại Uzbekistan</a>
+                </div>
+                <div class="img">
+                    <a href="https://vnexpress.net/tuong-quan-truoc-tran-viet-nam-han-quoc-4472186.html"><img src="../Lab1/img/Settop-Viet-Nam-Han-Quoc-jpeg_1654381159.jpg" title="Tương quan trước trận Việt Nam - Hàn Quốc"></a>
+                    <a href="https://vnexpress.net/tuong-quan-truoc-tran-viet-nam-han-quoc-4472186.html">Tương quan trước trận Việt Nam - Hàn Quốc</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
