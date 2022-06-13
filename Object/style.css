@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #F0F2F5;
+    max-width: 1750px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    position: relative;
+    align-items: center;
+    /* justify-content: space-around; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+input {
+    border-width: 0.7px;
+}
+
+input:hover {
+    border-color: #1877F2;
+}
+
+div {
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    padding: 50px 25px;
+    margin: 50px 0;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgb(180, 180, 180);
+    /* margin-left: 200px; */
+}
+
+.ip-btn {
+    font-size: 25px;
+    margin: 10px 0;
+    width: 250px;
+    padding: 10px;
+    border-radius: 8px
+}
+
+.btn {
+    margin-top: 25px;
+    background: #1877F2;
+    border: none;
+    opacity: 0.8;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+table {
+    /* padding-bottom: 250px; */
+    margin-left: 50px;
+}
+
+table thead {
+    top: 0;
+}
+
+table,
+tr td,
+tr th {
+    border: 1px solid black;
+}
+
+tr td,
+tr th {
+    text-align: center;
+    line-height: 75px;
+    width: 100px;
+}
+
+tr td {
+    width: 200px;
+}
+
+tr td input {
+    display: none;
+    /* padding: 5px; */
+    width: 100%;
+    font-size: 15px;
+}
+
+tr td:hover input {
+    display: block;
+    padding: 10px 0;
+}
