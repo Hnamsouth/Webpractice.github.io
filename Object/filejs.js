@@ -1,5 +1,8 @@
 var dsteam = [];
 var k = [];
+var dsT;
+var getdsT;
+var arrdsT = [];
 
 function myfunction() {
 
@@ -31,20 +34,31 @@ function myfunction() {
         }
         dsteam.push(sv);
         let bd = biendem(teampick);
-        var dsT = localStorage.setItem('team' + teampick + bd, JSON.stringify(sv));
-        var getdsT = localStorage.getItem('team' + teampick + bd);
-        var arrdsT = [];
-        arrdsT[teampick] = JSON.parse(getdsT) // chuyen cac gtri trong team1 thanh 1 mang
-            // var s = localStorage.key(0)
-            // lay value cua ptu trong mang
-            // console.log(bd1) //tifm do dai cua mang
+        // console.log(sv);
+        let i = 0;
+        while (i < 5) {
+            let test = document.getElementById('t' + teampick + i);
+            console.log(test);
+            if (test == null) {
+                dsT = localStorage.setItem('team' + teampick + i, JSON.stringify(sv));
+                getdsT = localStorage.getItem('team' + teampick + i);
+                arrdsT[teampick] = JSON.parse(getdsT) // chuyen cac gtri trong team1 thanh 1 mang
+                render(i);
+                break;
+            }
+            i++;
+        }
+
+        // console.log(arrdsT[teampick])
         let kt = ktr(teampick);
-        // console.log(kt);
+        // console.log(ks);
         if (kt) {
-            k[teampick + bd] = document.getElementById("team" + teampick).innerHTML += render();
+            k[teampick + i] = document.getElementById("team" + teampick).innerHTML += render(i);
         } else {
+            localStorage.removeItem('team' + teampick + 5);
             alert('Team day day. Vui long chon team khac')
         }
+
     }
 }
 
@@ -53,14 +67,16 @@ function biendem(teampick) {
     if (teampick == 1) { bd = bd1 } else if (teampick == 2) { bd = bd2 } else if (teampick == 3) { bd = bd3 } else if (teampick == 4) { bd = bd4 } else if (teampick == 5) { bd = bd5 }
     return bd;
 }
-
-function render() {
+// ktr tung ptu trong mang team__ ko co thi gan nguoc lai bo qua
+function render(i) {
     var kq;
     var test = document.querySelectorAll("tr td");
     // neu teampeak bang 1 thi chuyen den tr1
     dsteam.forEach(elm => {
         let bd = biendem(elm.tp) - 1;
-        kq = `<td id="t${elm.tp+bd}">${(elm.fn)} <button class="ip-btn btn" type="button" onclick="Dlet('team${elm.tp+bd}',${elm.tp+bd},${elm.tp})">Delete</button></td>`
+        let bdem = biendem(elm.tp);
+        kq = `<td id="t${elm.tp+i}">${(elm.fn)} 
+        <button class="ip-btn btn" type="button" onclick="Dlet('team${elm.tp+i}',${elm.tp+i},${elm.tp})">Delete</button></td>`
     });
     return kq;
 }
@@ -77,9 +93,9 @@ function ktr(tp) {
 }
 
 function Dlet(kw, stt, teampick) {
-    console.log(stt);
-    k[stt] = document.getElementById("t" + stt).innerHTML = '';
+    // console.log(teampick);
+    if (teampick == 1) { bd1--; } else if (teampick == 2) { bd2--; } else if (teampick == 3) { bd3--; } else if (teampick == 4) { bd4--; } else if (teampick == 5) { bd5--; }
+    k[stt] = document.getElementById("t" + stt);
+    k[stt].remove();
     localStorage.removeItem(kw);
 }
-
-// function findIndex()
