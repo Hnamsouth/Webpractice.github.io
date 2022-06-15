@@ -1,0 +1,108 @@
+* {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.al {
+    background: linear-gradient(180deg, #122525, #1e635b, #122525);
+    max-width: 1500px;
+    min-height: 1080px;
+    padding-top: 120px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.content {
+    /* display: none; */
+    max-width: 950px;
+    min-height: 1080px;
+    margin: 0 auto;
+    /* height: 1500px; */
+    position: relative;
+    /* background: linear-gradient(180deg, #122525, #1e635b, #122525); */
+    box-sizing: border-box;
+    /* background-image: url(./img/office-background.jpg);
+    background-repeat: no-repeat; */
+    z-index: 0;
+}
+
+.ct-left {
+    /*  phu thuoc vao ptu cha */
+    position: absolute;
+    max-width: 250px;
+    max-height: 1057px;
+    background: #E7E7E7;
+    margin: 23px 35px 23px 35px;
+    padding: 0 25px;
+    z-index: 2;
+    box-sizing: border-box;
+    /* margin-top: 70px; */
+}
+
+.ct-left .ct-left_cont {
+    max-width: 100%;
+    border-bottom: 1px solid rgb(194, 194, 194);
+}
+
+.ct-left div {
+    margin: 32px 0;
+}
+
+.ct-left p {
+    display: flex;
+    align-items: center;
+}
+
+.ct-left p ion-icon {
+    margin-right: 5px;
+}
+
+.ct-left hr {
+    right: 0;
+}
+
+.ct-left img {
+    margin-left: 15px;
+    max-width: 80%;
+    border-radius: 50%;
+}
+
+.ct-right {
+    background-color: white;
+    position: absolute;
+    max-width: calc(1250px - 30%);
+    z-index: 1;
+    box-sizing: border-box;
+    top: 0;
+}
+
+.right-header {
+    max-width: 1000px;
+    background: linear-gradient(90deg, #122525, #1e635b, #122525);
+    color: white;
+    max-height: 200px;
+    box-sizing: border-box;
+}
+
+.right-header div {
+    max-width: calc(60%-300px);
+    padding: 35px 30px 35px 315px;
+    box-sizing: border-box;
+}
+
+.right-header div p {
+    box-sizing: border-box;
+}
+
+.right-ct {
+    padding: 10px 30px 10px 300px;
+    text-rendering: geometricPrecision;
+    height: 1080px;
+}
+
+.right-ct div {
+    line-height: 18px;
+}
+
+.right-ct div h1 {
+    line-height: 40px;
+}

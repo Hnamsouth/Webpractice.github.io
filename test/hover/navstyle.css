@@ -104,6 +104,7 @@ a:hover {
         background: none;
         color: #0082e6;
     }
+    /* neu ng dung an vao thì  */
     #check:checked~ul {
         left: 0;
     }
