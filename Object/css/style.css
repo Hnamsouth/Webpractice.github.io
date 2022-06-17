@@ -95,14 +95,16 @@ tr td span {
 
 tr td button {
     position: relative;
-    width: 80%;
-    height: 35px;
-    bottom: -70px;
+    float: left;
+    width: 40%;
+    margin-right: 3px;
+    height: 30px;
+    bottom: -90px;
     border: none;
     border-radius: 5px;
     background: #00a300;
     color: white;
-    font-size: 20px;
+    font-size: 12px;
     opacity: 0.8;
     transition: all 0.3s;
 }
@@ -113,7 +115,7 @@ tr td:hover button {
 }
 
 tr td button:hover {
-    transition: 0.5s;
+    transition: all 0.5s;
     background: #a72741;
     box-shadow: 0px 0px 10px 2px red;
 }
@@ -128,4 +130,25 @@ tr td button:hover span {
 
 tr td button:checked {
     animation-delay: 5s;
+}
+
+tr td i {
+    justify-content: center;
+    text-align: left;
+    font-size: 10px;
+    margin: -20px 0 20px 0;
+}
+
+td .fa-solid {
+    display: none;
+    font-size: 15px;
+    color: #00A300;
+}
+
+td .fa-solid span {
+    margin-left: 10px;
+    font-size: 8px;
+    align-items: center;
+    letter-spacing: 1px;
+    color: black;
 }

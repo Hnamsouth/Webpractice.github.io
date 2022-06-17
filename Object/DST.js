@@ -1,17 +1,32 @@
 var dsteam = [];
 var team = [0, 0, 0, 0, 0];
-const tdmaker = (elm, i) => {
-    document.getElementById('team' + elm.tp).innerHTML += `<td id="t${elm.tp+i}"><span class="slt${elm.tp}">${(elm.fn)}</span>
-    <button type="button" onclick="Dlet('team${elm.tp+i}',${elm.tp+i},${elm.tp})"><span>Delete</span></button></td>`
+const tdmaker = (elm, i, bl) => {
+    let b1 = 'pickleader',
+        b2 = 'Pick Leader',
+        dp = 'none';
+    if (!bl) {
+        b1 = 'rmleader';
+        b2 = 'Remove Leader';
+        dp = 'block';
+    }
+    console.log(bl);
+    document.getElementById('team' + elm.tp).innerHTML += `<td id="t${elm.tp+i}"><i id="i${elm.tp+i}" style="display:${dp}" class="fa-solid fa-circle-check"><span>Team leader</span></i><span class="slt${elm.tp}">${(elm.fn)}</span>
+    <button type="button" onclick="Dlet('team${elm.tp+i}',${elm.tp+i},${elm.tp})"><span>Delete</span></button><button id="btn${elm.tp+i}" type="button" onclick="${b1}(${elm.tp+i},'${elm.fn}',${elm.tp})">${b2}</button></td>`
 }
 
 for (let i = 1; i <= 6; i++) {
     for (let j = 0; j < 6; j++) {
         let s = localStorage.getItem('team' + i + j);
+        // console.log(s);
         if (s) {
+            let boolen = true;
             team[i - 1]++;
             let f = JSON.parse(localStorage.getItem('team' + i + j));
-            tdmaker(f, j);
+            console.log(f.bt);
+            if (f.bt === 0) {
+                boolen = false;
+            }
+            tdmaker(f, j, boolen);
         }
     }
 }
@@ -48,12 +63,13 @@ function myfunction() {
         let i = 0;
         while (i < 6) {
             let test = document.getElementById('t' + teampick + i);
-            // console.log(test);
+
             if (test == null) {
                 let dsT = localStorage.setItem('team' + teampick + i, JSON.stringify(sv));
                 let getdsT = localStorage.getItem('team' + teampick + i);
                 let arrdsT = [];
                 arrdsT[teampick] = JSON.parse(getdsT) // chuyen cac gtri trong team1 thanh 1 mang
+                console.log(arrdsT);
                 render(i);
                 break;
             }
@@ -76,8 +92,8 @@ function render(i) {
     var kq;
     var test = document.querySelectorAll("tr td");
     dsteam.forEach(elm => {
-        kq = `<td id="t${elm.tp+i}"><span class="slt${elm.tp}">${(elm.fn)}</span>
-        <button type="button" onclick="Dlet('team${elm.tp+i}',${elm.tp+i},${elm.tp})"><span>Delete</span></button></td>`
+        kq = `<td id="t${elm.tp+i}"><i id="i${elm.tp+i}"  style="display:none" class="fa-solid fa-circle-check"><span>Team leader</span></i><span class="slt${elm.tp}">${(elm.fn)}</span>
+        <button type="button" onclick="Dlet('team${elm.tp+i}',${elm.tp+i},${elm.tp})"><span>Delete</span></button><button id="btn${elm.tp+i}" type="button" onclick="pickleader(${elm.tp+i},'${elm.fn}',${elm.tp});">Pick Leader</button></td>`
     });
     return kq;
 }
@@ -105,4 +121,34 @@ function Dlet(kw, stt, teampick) {
     k[stt] = document.getElementById("t" + stt);
     k[stt].remove();
     localStorage.removeItem(kw);
+}
+// const replace = (elm, i) => {
+//     document.getElementById('team' + elm.tp).innerHTML = `<td id="t${elm.tp+i}"><i id="i${elm.tp+i}" style="" class="fa-solid fa-circle-check"><span>Team leader</span></i><span class="slt${elm.tp}">${(elm.fn)}</span>
+//     <button type="button" onclick="Dlet('team${elm.tp+i}',${elm.tp+i},${elm.tp})"><span>Delete</span></button><button id="btn${elm.tp+i}" type="button" onclick="pickleader(${elm.tp+i},${i});"><span>Pick Leader</span></button></td>`
+// }
+
+// neu 1 nut duoc checked thi cac nut khac display none
+function pickleader(id, fn, tp, i) {
+    document.getElementById('i' + id).style.display = 'block';
+    let rm = document.getElementById('btn' + id).innerHTML = 'Remove Leader';
+    let k = JSON.parse(localStorage.getItem('team' + id));
+    k.bt = 0;
+    let lc = localStorage.setItem('team' + id, JSON.stringify(k));
+    console.log(k);
+    localStorage.getItem('team' + id)
+    document.getElementById('btn' + id).onclick = function() {
+        rmleader(id, tp, fn, i);
+    }
+}
+
+function rmleader(id, tp, fn, i) {
+    document.getElementById('i' + id).style.display = 'none';
+    let pl = document.getElementById('btn' + id).innerHTML = 'Pick Leader';
+    let k = JSON.parse(localStorage.getItem('team' + id));
+    k.bt = 1;
+    let lc = localStorage.setItem('team' + id, JSON.stringify(k));
+    localStorage.getItem('team' + id)
+    document.getElementById('btn' + id).onclick = function() {
+        pickleader(id, tp, fn, i);
+    }
 }
