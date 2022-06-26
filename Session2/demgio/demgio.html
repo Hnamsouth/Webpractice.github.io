@@ -57,16 +57,19 @@
             height: 50px;
             border-radius: 5px;
             border: none;
-            background: rgb(204, 53, 53);
+            background: var(--cl);
             color: white;
             font-weight: 600;
-            /*opacity: 0.7;*/
             margin: 0 9px;
-            box-shadow: 0 0 8px #21252B, -1.5px -0.5px 2px #131416, -2.5px -2.5px 6px #161414, inset 2px 2px 6px rgba(0, 0, 0, 0.5), inset 2px 2px 2px rgba(0, 0, 0, 0.6), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
-            top: 11.5px;
-            left: 3px;
-            animation: none 6.5s infinite;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4), -1.5px -0.5px 6px #131415, -2.5px -2.5px 6px #323131, inset 1.5px 1.5px 2px rgba(21, 21, 21, 0.7), inset 2px 2px 6px rgba(0, 0, 0, 0.7), inset -1px -1px 2px rgba(31, 31, 31, 0.7);
+            top: 8px;
+            left: 0.5px;
+            animation-name: none;
+            animation-duration: 0.8s;
+            animation-iteration-count: 1;
+            animation-direction: alternate-reverse;
             z-index: 10000;
+            /*animation: name duration timing-function delay iteration-count direction fill-mode;*/
         }
         
         .clock {
@@ -75,8 +78,8 @@
         
         .clock .btn div {
             position: relative;
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             border-radius: 5px;
             overflow: hidden;
             box-shadow: inset 2px 3px 5px rgb(0 0 0 / 60%), inset -2px -3px 5px rgb(0 0 0 / 20%);
@@ -97,19 +100,12 @@
         
         @keyframes lightunder {
             0% {
-                box-shadow: 0 0 8px hsl(0, 100%, 55%), -1.5px -0.5px 1px hsl(0, 100%, 56%), -2.5px -2.5px 6px hsl(0, 95%, 60%), inset 2px 2px 5px rgba(0, 0, 0, 0.9), inset -2px -2px 20px rgba(0, 0, 0, 0.2);
-            }
-            25% {
-                box-shadow: 0 0 8px hsl(90, 100%, 59%), -1.5px -0.5px 1px hsl(90, 100%, 57%), -2.5px -2.5px 6px hsl(90, 100%, 64%), inset 2px 2px 5px rgba(0, 0, 0, 0.9), inset -2px -2px 20px rgba(0, 0, 0, 0.2);
-            }
-            50% {
-                box-shadow: 0 0 8px hsl(180, 100%, 59%), -1.5px -0.5px 1px hsl(180, 100%, 57%), -2.5px -2.5px 6px hsl(180, 100%, 64%), inset 2px 2px 5px rgba(0, 0, 0, 0.9), inset -2px -2px 20px rgba(0, 0, 0, 0.2);
-            }
-            75% {
-                box-shadow: 0 0 8px hsl(270, 100%, 59%), -1.5px -0.5px 1px hsl(270, 100%, 57%), -2.5px -2.5px 6px hsl(270, 100%, 64%), inset 2px 2px 5px rgba(0, 0, 0, 0.9), inset -2px -2px 20px rgba(0, 0, 0, 0.2);
+                top: 8px;
+                left: 0.5px;
             }
             100% {
-                box-shadow: 0 0 8px hsl(359, 100%, 59%), -1.5px -0.5px 1px hsl(359, 100%, 57%), -2.5px -2.5px 6px hsl(359, 100%, 64%), inset 2px 2px 5px rgba(0, 0, 0, 0.9), inset -2px -2px 20px rgba(0, 0, 0, 0.2);
+                transform: translate(-0.4px, 0.4px);
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4), -1.5px -0.5px 6px #131415, -2.5px -2.5px 6px #323131, inset 1.5px 1.5px 1px rgba(21, 21, 21, 0.7), inset 2px 2px 6px rgba(0, 0, 0, 0.8), inset -1px -1px 2px rgba(31, 31, 31, 0.5);
             }
         }
     </style>
@@ -121,14 +117,14 @@
             <div class="time"><span id="dn">10:00</span></div>
             <div class="btn" style="display: flex;justify-content: center;">
                 <div>
-                    <button type="button " id="start" onclick="countdown() "><span id="Tstart">Start</span>
+                    <button type="button " id="start" onclick="countdown()" style="--cl:#198754e0;"><span id="Tstart" style="text-shadow: 0 0 5px hsl(0, 100%, 50%);">Start</span>
                     </button>
                 </div>
                 <div>
-                    <button type="button" id="stop"><span id="Tstop">Stop</span> </button>
+                    <button type="button" id="stop" style="--cl:#dc3546e9;"><span>Stop</span></button>
                 </div>
                 <div>
-                    <button type="button " id="reset"><span>Reset</span> </button>
+                    <button type="button " id="reset" style="--cl:#0d6dfddf;"><span>Reset</span> </button>
                 </div>
             </div>
         </div>
