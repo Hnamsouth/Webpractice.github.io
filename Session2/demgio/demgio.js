@@ -51,4 +51,5 @@ document.getElementById('reset').addEventListener("click", function() {
     ts = 0;
     time.innerHTML = "10:00";
     Tstart.innerHTML = 'Start';
+    start.disabled = false;
 })
