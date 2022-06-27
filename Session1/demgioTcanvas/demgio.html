@@ -37,7 +37,7 @@
             height: 50px;
             color: rgb(227, 225, 225);
             text-shadow: 0 0 5px hsl(0, 100%, 50%);
-            background: #2b2e33;
+            background: hsl(218, 9%, 18%);
             font-size: 25px;
             border-radius: 8px;
             box-shadow: inset -2px 2.5px 2px rgba(0, 0, 0, 0.6), inset -2px 2.5px 6px rgba(0, 0, 0, 0.4), inset -2px -3px 5px rgba(0, 0, 0, 0.1);
@@ -114,7 +114,7 @@
 <body>
     <div class="clock">
         <div style="display:flex; flex-direction: column; justify-content:center ;align-items: center;">
-            <div class="time"><span id="dn">10:00</span></div>
+            <div class="time"><canvas id="canvs" width="150" height="40" style="border:1px solid #d3d3d3;position:absolute;text-align:center;"></canvas></div>
             <div class="btn" style="display: flex;justify-content: center;">
                 <div>
                     <button type="button " id="start" onclick="countdown()" style="--cl:#198754e0;"><span id="Tstart" style="text-shadow: 0 0 5px hsl(0, 100%, 50%);">Start</span>
