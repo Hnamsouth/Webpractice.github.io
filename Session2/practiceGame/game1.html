@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid #d3d3d3;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body onload="startGame()">
+    <script>
+        var myGamePice;
+        // onload event : thực thi 1 js ngay lập thức sau khi trang được tải hoặc f5
+        function startGame() {
+            myGameArea.start();
+            // khởi tạo 1 hàm mới
+            myGamePiece = new Fct_dckhoitao(30, 30, "red", 10, 120);
+        }
+
+        var myGameArea = {
+            // tạo 1 phần tử thẻ cavas
+            cavas: document.createElement("canvas"),
+            // tạo khung ngoài
+            start: function() {
+                this.cavas.width = 480;
+                this.cavas.height = 270;
+                this.context = this.cavas.getContext("2d");
+                document.body.insertBefore(this.cavas, document.body.childNodes[0]);
+            }
+        }
+
+        function Fct_dckhoitao(width, height, color, x, y) {
+            this.width = width;
+            this.height = height;
+            this.x = x;
+            this.y = y;
+            ctx = myGameArea.context;
+            ctx.fillStyle = color;
+            ctx.fillRect(this.x, this.y, this.width, this.height)
+        }
+    </script>
+</body>
+
+</html>
