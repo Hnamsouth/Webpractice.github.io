@@ -105,7 +105,7 @@
             }
             100% {
                 transform: translate(-0.6px, 0.5px);
-                box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4), -1.5px -0.5px 6px #131415, -2.5px -2.5px 6px #323131, inset 1.5px -1.5px 1px rgba(21, 21, 21, 0.7), inset 2px -2px 6px rgba(0, 0, 0, 0.8), inset -1px 1px 2px rgba(31, 31, 31, 0.5);
+                box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.98), 1.5px -1px 6px #2B2E33, -2.5px -2.5px 6px #363434, inset 1.5px -1.5px 2px rgba(21, 21, 21, 0.7), inset 2px -2px 6px rgba(0, 0, 0, 0.7), inset -1px 1px 2px rgba(31, 31, 31, 0.7);
             }
         }
     </style>
@@ -117,15 +117,14 @@
             <div class="time"><span id="dn">10:00</span></div>
             <div class="btn" style="display: flex;justify-content: center;">
                 <div>
-                    <button type="button " id="start" onclick="countdown()" style="--cl:#198754e0;"><span id="Tstart" style="text-shadow: 0 0 5px hsl(0, 100%, 50%);">Start</span>
+                    <button onclick="mss(0)" class="pumos" type="button " id="start" onclick="countdown()" style="--cl:#198754e0;"><span id="Tstart" style="text-shadow: 0 0 5px hsl(0, 100%, 50%);">Start</span>
                     </button>
-                    <svg></svg>
                 </div>
                 <div>
-                    <button type="button" id="stop" style="--cl:#dc3546e9;"><span>Stop</span></button>
+                    <button onclick="mss(1)" class="pumos" type="button" id="stop" style="--cl:#dc3546e9;"><span>Stop</span></button>
                 </div>
                 <div>
-                    <button type="button " id="reset" style="--cl:#0d6dfddf;"><span>Reset</span> </button>
+                    <button onclick="mss(2)" class="pumos" type="button " id="reset" style="--cl:#0d6dfddf;"><span>Reset</span> </button>
                 </div>
             </div>
         </div>

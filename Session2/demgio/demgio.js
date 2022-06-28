@@ -2,11 +2,24 @@ var bd;
 var m = 10;
 var s = 00;
 var ts = 0;
+var pumos = document.getElementsByClassName('pumos');
+
 var time = document.getElementById('dn');
 var Tstart = document.getElementById('Tstart');
 var start = document.getElementById('start');
 var stop = document.getElementById('stop');
 var reset = document.getElementById('reset');
+/*
+function mss(x) {
+    pumos[x].addEventListener("mousedown", function() {
+        this.style.animation = "lightunder 0.1s 1";
+    })
+    pumos[x].addEventListener("mouseup", function() {
+        this.style.animation = "none 0.1s 1 1s";
+
+    })
+}*/
+
 
 start.addEventListener("mousedown", function() {
     this.style.animation = "lightunder 0.15s 1";
@@ -15,7 +28,6 @@ start.addEventListener("mouseup", function() {
     this.style.animation = "none 0.15s 1 1s";
 })
 document.getElementById('start').addEventListener("click", function() {
-
     bd = setInterval(cd, 10);
     if (m == 00 && s == 00) {
         alert('heeli');
@@ -46,6 +58,7 @@ function cd() {
     time.style.textShadow = `0 0 5px hsl(${ts+=0.6}, 100%, 50%),0 0 10px hsl(${ts}, 100%, 50%)`
     Tstart.style.textShadow = `0 0 5px hsl(${ts}, 100%, 50%)`;
 }
+
 stop.addEventListener("mousedown", function() {
     this.style.animation = "lightunder 0.15s 1";
 })
@@ -60,6 +73,7 @@ document.getElementById('stop').addEventListener("click", function() {
         start.disabled = false;
     }
 })
+
 reset.addEventListener("mousedown", function() {
     this.style.animation = "lightunder 0.15s 1";
 })
