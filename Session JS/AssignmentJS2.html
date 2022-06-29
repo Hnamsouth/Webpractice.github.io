@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head runat=”server”>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Ibs/bootstrap/css/bootstrap.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class=" container-sm weather p-0">
+
+        <div class=" row border align-items-top weather-1 flex-wrap" style="max-width: 900px;">
+            <div class="col-6 row">
+                <div class="col-3 p-0 " id="icon">
+                    <img src='http://openweathermap.org/img/wn/10d@2x.png'>
+                </div>
+                <div class="col-3 d-flex justify-content-center position-relative p-0 ">
+                    <p class="w-100" style="color:white;" id="temp"></p>
+                    <div class=" d-flex position-absolute top-0 end-0 cf">
+                        <button class="p-0 tp clbt" type="button" disabled onclick="cdoi(0,document.getElementById('temp').innerHTML)"><sup>o</sup><span class="border-end me-1 pe-1" >C</span></button>
+                        <button class="p-0 tp" type="button" onclick="cdoi(1,document.getElementById('temp').innerHTML)"><sup>o</sup><span >F</span></button>
+                    </div>
+                </div>
+                <div class="col-6  d-flex flex-column c-4">
+                    <div>Mây: <span id="clouds"></span></div>
+                    <div>Độ ẩm: <span id="humidity"></span></div>
+                    <div>Gió: <span id="wind"></span></div>
+                </div>
+            </div>
+            <div class="col-6 text-sm-end d-flex flex-column">
+                <div id="lct"></div>
+                <div class="c-5" id="daytime"><span id="days"></span> <span id="time"> </span> </div>
+                <div class="c-5" id="description"></div>
+            </div>
+        </div>
+        <div class="form-floating search " style="max-width: 900px;left:-11px;">
+            <input class="inpt form-control" type="text" name="search-city" id="search-box" placeholder="City">
+            <label for="floatingInput">City</label>
+        </div>
+    </div>
+</body>
+<style>
+    .weather-1 {
+        background: linear-gradient(90deg, #005fad, #2C88D3, #015eaa);
+    }
+    
+    .cf {
+        letter-spacing: 2px;
+    }
+    
+    #temp {
+        font-size: 48px;
+        font-weight: 400;
+        font-family: arial, sans-serif;
+    }
+    
+    .c-5 {
+        color: rgba(255, 255, 255, 0.8);
+        display: inline-block;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    
+    .c-4 {
+        color: rgba(255, 255, 255, 0.8);
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 350;
+        line-height: 30px;
+    }
+    
+    #lct {
+        color: white;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 35px;
+    }
+    
+    #description {
+        text-transform: capitalize;
+    }
+    
+    .cf button {
+        background: none;
+        border: none;
+    }
+    
+    .clbt {
+        color: white !important;
+    }
+    
+    .tp {
+        color: rgb(32, 32, 28);
+    }
+    
+    .inpt {
+        border-bottom: 1px solid gray;
+        outline: none;
+    }
+    
+    @media (min-width: 768px) {}
+</style>
+<script src="../jquery/jqUncompress.js"></script>
+<script type="text/javascript">
+    var days = ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bẩy", "Chủ Nhật"]
+    const APP_ID = '5dc16f8b88482c4d130ea4449fecbb48';
+    var icon = $("#icon");
+    var temp = $("#temp");
+    var clouds = $('#clouds');
+    var hmdt = $('#humidity');
+    var wind = $('#wind');
+    var lct = $('#lct');
+    var daytime = $('#daytime');
+    var description = $('#description');
+    var date = new Date();
+
+
+    const searchBox = document.querySelector("#search-box");
+    var city = "ha noi";
+    thoitiet(city);
+
+    function thoitiet(city) {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APP_ID}&lang=vi&units=metric`)
+            //su dung method then(): method then se duoc chay khi co du lieu tu API tra ve
+            .then(async res => {
+                const data = await res.json();
+                console.log(data);
+                icon.html("<img src='http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png' width:100%/>");
+                temp.text(Math.round(data.main.temp));
+                clouds.text(data.clouds.all + " %");
+                hmdt.text(data.main.humidity + " %");
+                wind.text(data.wind.speed + " K/h");
+                lct.text(data.name + ", " + data.sys.country);
+                description.text(data.weather[0].description);
+                $("#days").text(days[date.getDay()]);
+                $("#time").text(date.getHours() + ":00")
+            })
+    }
+    searchBox.addEventListener('change', (e) => {
+        city = e.target.value;
+        thoitiet(city);
+    })
+    var cl = document.getElementsByClassName('tp');
+    var tp = temp.text();
+
+    function cdoi(index, tp) {
+        var s = [456, 789];
+        if (index == 0) {
+            temp.text(Math.round((tp - 32) / 1.8));
+            cl[1].removeAttribute("disabled");
+            cl[0].classList.add("clbt");
+            cl[0].setAttribute("disabled", "true");
+            cl[1].classList.remove("clbt");
+        } else {
+            temp.text(Math.round(1.8 * tp + 32))
+            cl[0].removeAttribute("disabled");
+            cl[1].classList.add("clbt");
+            cl[1].setAttribute("disabled", "true");
+            cl[0].classList.remove("clbt");
+        }
+    }
+</script>
+
+</html>
