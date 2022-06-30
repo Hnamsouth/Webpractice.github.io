@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Ibs/bootstrap/css/bootstrap.css">
+    <style>
+        .weather {
+            background-image: url(./img/image.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        ul {
+            justify-content: center;
+            box-sizing: border-box;
+        }
+        
+        ul li {
+            padding: 15px !important;
+            background: #9eb2c16e;
+            margin-right: 25px;
+            width: 20% !important;
+            height: 180px;
+            margin-bottom: 25px;
+            color: white;
+            border: 2px solid rgb(202, 202, 202) !important;
+        }
+        
+        ul li .nd {
+            max-height: 50%;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            box-sizing: border-box;
+        }
+        
+        ul li .nd .temp {
+            font-size: 30px;
+            font-weight: 450;
+        }
+        
+        ul li .nd img {
+            height: 100%;
+        }
+        
+        ul li div {
+            margin-bottom: 15px;
+        }
+        
+        ul li .text {
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        .cityname {
+            color: white;
+            text-align: center;
+            font-size: 80px;
+            margin: 25px 0;
+        }
+        
+        #ipCT {
+            background: none;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid white;
+            color: white;
+            font-size: 30px;
+            padding: 10px;
+            text-align: center;
+            width: 50%;
+            margin: 30px 0;
+        }
+        
+        .description {
+            text-transform: capitalize;
+        }
+        
+        .btn {
+            font-size: 20px;
+        }
+        
+        @media(max-width:1400px) {
+            ul li {
+                width: 22% !important;
+            }
+        }
+        
+        @media(max-width:1200px) {
+            ul li {
+                width: 30% !important;
+            }
+            ul li div {
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media(max-width:992px) {
+            ul li {
+                width: 40% !important;
+                max-height: 200px;
+            }
+            ul li .nd {
+                justify-content: flex-start
+            }
+            ul li .nd img {
+                height: 80%;
+            }
+            .cityname {
+                font-size: 60px;
+            }
+        }
+        
+        @media(max-width:770px) {
+            ul li {
+                width: 45% !important;
+                max-height: 180px;
+            }
+            ul li div {
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media(max-width:530px) {
+            ul li {
+                width: 60% !important;
+            }
+            .cityname {
+                font-size: 45px;
+            }
+        }
+        
+        @media(max-width:400px) {
+            ul li {
+                min-width: 70% !important;
+            }
+            .btn {
+                font-size: 20px;
+                width: 50% !important;
+            }
+            .cityname {
+                font-size: 40px;
+            }
+        }
+        
+        @media(max-width:336px) {
+            ul li {
+                min-width: 80% !important;
+            }
+            .cityname {
+                font-size: 35px;
+            }
+        }
+        
+        @media(max-width:290px) {
+            ul li {
+                min-width: 90% !important;
+            }
+        }
+        
+        .time {
+            position: sticky;
+            top: 20px;
+            color: white;
+            font-size: 20px;
+            margin-left: 12px;
+            box-sizing: border-box;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class=" container-sm weather">
+        <div class="time"><span class="clock"></span></div>
+        <div class=" d-flex flex-column align-items-center ">
+            <input type="text" id="ipCT" placeholder="City">
+            <button class="btn btn-light w-25" type="button" onclick="Ccity()">Search</button>
+        </div>
+        <div class="cityname"></div>
+        <ul class="row" id="asd" style="list-style: none;">
+
+        </ul>
+    </div>
+</body>
+<script src="../jquery/jqUncompress.js"></script>
+<script type="text/javascript">
+    var ct = "ha noi";
+    loadcity();
+    $("#ipCT").keydown(event => {
+        if (event.which == 13) {
+            ct = $("#ipCT").val();
+            loadcity();
+        }
+    });
+
+    function Ccity() {
+        ct = $("#ipCT").val();
+        loadcity();
+    };
+
+    function loadcity() {
+        $.ajax({
+            //url: "https://api.openweathermap.org/data/2.5/weather?q=Hanoi,vietnam&appid=09a71427c59d38d6a34f89b47d75975c&units=metric",
+            //url: "https://api.openweathermap.org/data/2.5/weather",
+            url: "http://api.openweathermap.org/data/2.5/forecast",
+            method: 'get',
+            data: {
+                q: ct,
+                appid: "09a71427c59d38d6a34f89b47d75975c",
+                units: "metric",
+                lang: "vi"
+            },
+            success: function(data) {
+                console.log(data);
+                var ds = data.list;
+
+                for (let i = 0; i < ds.length; i++) {
+                    if ($("#asd").children() == null || $("#asd").children().length < 40) {
+                        $("#asd").append('<li class="col-2" ><div class="row-cols-3 text daytime" ></div><div class="nd"><span class="temp"></span><img class="icon" src="" alt=""></div><div class="description text"></div></li>');
+                    }
+                    var sl = $("#asd").children();
+                    $(".daytime")[i].innerHTML = ds[i].dt_txt;
+                    $(".temp")[i].innerHTML = ds[i].main.temp + "<sup>o</sup>C";
+                    $(".icon")[i].setAttribute("src", 'http://openweathermap.org/img/wn/' + ds[i].weather[0].icon + '@2x.png')
+                    $(".description")[i].innerHTML = ds[i].weather[0].description;
+                }
+                console.log($(".daytime")[0].innerHTML);
+                $(".cityname").text(data.city.name + ", " + data.city.country);
+            }
+        })
+    }
+    setInterval(() => {
+        var date = new Date();
+        var h = date.getHours() < 10 ? h = "0" + date.getHours() : date.getHours(),
+            m = date.getMinutes() < 10 ? m = "0" + date.getMinutes() : date.getMinutes()
+        $(".clock").text(h + " : " + m);
+    }, 1000);
+</script>
+
+</html>
