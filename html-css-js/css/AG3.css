@@ -1,0 +1,163 @@
+.weather {
+    background-image: url(../img/image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+ul li {
+    padding: 15px !important;
+    background: #9eb2c16e;
+    margin-right: 25px;
+    width: 20% !important;
+    height: 180px;
+    margin-bottom: 25px;
+    color: white;
+    border: 2px solid rgb(202, 202, 202) !important;
+}
+
+ul li .nd {
+    max-height: 50%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    box-sizing: border-box;
+}
+
+ul li .nd .temp {
+    font-size: 30px;
+    font-weight: 450;
+}
+
+ul li .nd img {
+    height: 100%;
+}
+
+ul li div {
+    margin-bottom: 15px;
+}
+
+ul li .text {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.cityname {
+    color: white;
+    text-align: center;
+    font-size: 80px;
+    margin: 25px 0;
+}
+
+#ipCT {
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    text-align: center;
+    width: 50%;
+    margin: 30px 0;
+}
+
+.description {
+    text-transform: capitalize;
+}
+
+.btn {
+    font-size: 20px;
+}
+
+@media(max-width:1400px) {
+    ul li {
+        width: 22% !important;
+    }
+}
+
+@media(max-width:1200px) {
+    ul li {
+        width: 30% !important;
+    }
+    ul li div {
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width:992px) {
+    ul li {
+        width: 40% !important;
+        max-height: 200px;
+    }
+    ul li .nd {
+        justify-content: flex-start
+    }
+    ul li .nd img {
+        height: 80%;
+    }
+    .cityname {
+        font-size: 60px;
+    }
+}
+
+@media(max-width:770px) {
+    ul li {
+        width: 45% !important;
+        max-height: 180px;
+    }
+    ul li div {
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width:530px) {
+    ul li {
+        width: 60% !important;
+    }
+    .cityname {
+        font-size: 45px;
+    }
+}
+
+@media(max-width:400px) {
+    ul li {
+        min-width: 70% !important;
+    }
+    .btn {
+        font-size: 20px;
+        width: 50% !important;
+    }
+    .cityname {
+        font-size: 40px;
+    }
+}
+
+@media(max-width:336px) {
+    ul li {
+        min-width: 80% !important;
+    }
+    .cityname {
+        font-size: 35px;
+    }
+}
+
+@media(max-width:290px) {
+    ul li {
+        min-width: 90% !important;
+    }
+}
+
+.time {
+    position: sticky;
+    top: 20px;
+    color: white;
+    font-size: 20px;
+    margin-left: 12px;
+    box-sizing: border-box;
+}

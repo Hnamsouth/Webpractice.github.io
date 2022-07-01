@@ -7,124 +7,79 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./css-jsMAIN/index.css">
+    <link rel="stylesheet" href="./Ibs/bootstrap/css/bootstrap.css">
     <script src="https://kit.fontawesome.com/57bd35e73b.js" crossorigin="anonymous"></script>
+
     <style>
-        body {
-            background-color: white;
-            color: black;
-            width: 1250px;
-            margin: 0 auto;
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            justify-content: space-around;
-        }
-        /*.header {
-            margin-top: 10px;
-            text-align: center;
-            background: linear-gradient(100deg, rgb(255, 0, 0), rgb(221, 224, 0), rgb(11, 154, 1));
-            border: 1px solid black;
-            border-radius: 8px;
-            font-size: 20px;
-        }*/
-        
-        .nav {
-            margin-top: 100px;
-            position: relative;
-        }
-        
-        .nav-1 {
-            margin: 5px;
-        }
-        
-        ul {
-            padding: 0;
-            list-style: none;
-            align-items: center;
-        }
-        
-        ul li {
-            background: #fa4952;
-            float: left;
-            width: 200px;
-            height: 40px;
-            text-align: center;
-            line-height: 40px;
-            font-size: 20px;
-            margin-right: 5px;
-        }
-        
-        ul li:hover {
-            background: white;
-        }
-        
-        ul li a {
-            color: black;
-            text-decoration: none;
-            display: block;
-        }
-        
-        ul li ul li a:hover {
-            background: white;
-        }
-        
-        ul li ul li {
-            text-align: left;
-            display: none;
-            border: 2px solid #FA4952;
-        }
-        
-        ul li:hover ul li {
-            display: block;
-        }
+
     </style>
 </head>
 
 <body>
-    <div class="theader">
-        <a class="header" href="By Hoang Van Nam" target="_blank">Class T2204M</a>
-    </div>
+    <div class="container ct">
 
-    <div class="nav">
+        <div class="ls">
+            <ul class="row ls-ct">
+                <li class="col-12 logo">
+                    <a class="" href="By Hoang Van Nam" target="_blank">T2204M</a>
+                </li>
+                <p>HTML-CSS</p>
+                <li class="col-3 htmlcss">
+                    <a href="./html-css-js/ag1SS1.html">SS1-dantri</a>
+                </li>
+                <li class="col-3 htmlcss">
+                    <a href="./html-css-js/lab1-SS1.html">SS1-VNexp</a>
+                </li>
+                <li class="col-3 htmlcss">
+                    <a href="./html-css-js/ss-cv.html">SS2-CV1</a>
+                </li>
+                <li class="col-3 htmlcss">
+                    <a href="./html-css-js/ss2-ag1.html">SS2-CV2</a>
+                </li>
+                <li class="col-3 htmlcss">
+                    <a href="./html-css-js/ss2-tiki.html">SS2-TIKI</a>
+                </li>
+                <li class="col-3 htmlcss">
+                    <a href="./html-css-js/FormAG-SS2.html">SS2-form</a>
+                </li>
+                <p>HTML-CSS-JS</p>
+                <li class="col-3 hcjs">
+                    <a href="./html-css-js/AssignmentJS2.html">JS-AG1</a>
+                </li>
+                <li class="col-3 hcjs">
+                    <a href="./html-css-js/AssignmentJS3.html">JS-AG2</a>
+                </li>
+                <p>PRACTICE</p>
+                <li class="col-3 hcjs">
+                    <a href="./PRACTICE/demgio.html">Coutdown</a>
+                </li>
+                <li class="col-3 hcjs">
+                    <a href="./PRACTICE/DSteam.html">DSteam</a>
+                </li>
 
-        <ul class="nav-1">
-            <li><a class="hoho all">Session 1</a>
-                <ul>
-                    <li><a class="hoho two" href="./Session1/Lab1/1.html"> Lab</a></li>
-                    <li><a class="hoho two" href="./Session1/Assignment1/1.html"> Assignment</a></li>
-                    <li><a class="hoho two" href="./Session1/practice/cv.html"> prt</a></li>
-                </ul>
-            </li>
-            <li><a class="hoho all">Session 2</a>
-                <ul>
-                    <li><a class="hoho two" href="./Session2/1/1.html"> Lab</a></li>
-                    <li> <a class="hoho two" href="./Session2/2/2.html"> Assignment</a></li>
-                    <li> <a class="hoho two" href="./Session2/FormAssignment/FormAssignment.html">Form Assignment</a></li>
-                    <li> <a class="hoho two" href="./Session2/demgio/demgio.html">Countdown</a></li>
-                </ul>
-            </li>
-            <li><a class="hoho all">Session JS</a>
-                <ul>
-                    <li><a class="hoho two" href="./Session JS/AssignmentJS3.html">Assignment2</a></li>
-                    <li><a class="hoho two" href="./Session JS/AssignmentJS2.html">Assignment1</a></li>
-                </ul>
-            </li>
-            <li><a class="hoho all">Session 4</a> </li>
 
-            <li><a class="hoho all">Practive 1</a>
-            </li>
-
-            <li><a class="hoho all">Object</a>
-                <ul>
-                    <li>
-                        <a class="hoho two" href="./Object/DSteam.html"> Prt DSteam</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-
+            </ul>
+        </div>
     </div>
 
 </body>
+<script src="./css-jsMAIN/mainJS.js"></script>
+<script src="./jquery/jqCompress.js"></script>
+<script>
+    $(document).keydown(event => {
+        var kd = event.which;
+        console.log(kd);
+        if (kd == "122" && kd == "13") {
+            alert("aja");
+        }
+    });
+    var i = 0;
+    /*
+    setInterval(() => {
+        $(".logo").css("text-shadow", `0 0 10px hsl(${i}, 94%, 53%),0 0 20px hsl(${i}, 94%, 53%)`)
+        i > 359 ? i = 0 : i++;
+    }, 100)*/
+</script>
 
 </html>

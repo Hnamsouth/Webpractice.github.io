@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Ibs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/AG3.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class=" container-sm weather">
+        <div class="time"><span class="clock"></span></div>
+        <div class=" d-flex flex-column align-items-center ">
+            <input type="text" id="ipCT" placeholder="City">
+            <button class="btn btn-light w-25" type="button" onclick="Ccity()">Search</button>
+        </div>
+        <div class="cityname"></div>
+        <ul class="row" id="asd" style="list-style: none;">
+
+        </ul>
+    </div>
+</body>
+<script src="../jquery/jqUncompress.js"></script>
+<script type="text/javascript">
+    var ct = "ha noi";
+    loadcity();
+    $("#ipCT").keydown(event => {
+        if (event.which == 13) {
+            ct = $("#ipCT").val();
+            loadcity();
+        }
+    });
+
+    function Ccity() {
+        ct = $("#ipCT").val();
+        loadcity();
+    };
+
+    function loadcity() {
+        $.ajax({
+            //url: "https://api.openweathermap.org/data/2.5/weather?q=Hanoi,vietnam&appid=09a71427c59d38d6a34f89b47d75975c&units=metric",
+            //url: "https://api.openweathermap.org/data/2.5/weather",
+            url: "http://api.openweathermap.org/data/2.5/forecast",
+            method: 'get',
+            data: {
+                q: ct,
+                appid: "09a71427c59d38d6a34f89b47d75975c",
+                units: "metric",
+                lang: "vi"
+            },
+            success: function(data) {
+                console.log(data);
+                var ds = data.list;
+
+                for (let i = 0; i < ds.length; i++) {
+                    if ($("#asd").children() == null || $("#asd").children().length < 40) {
+                        $("#asd").append('<li class="col-2" ><div class="row-cols-3 text daytime" ></div><div class="nd"><span class="temp"></span><img class="icon" src="" alt=""></div><div class="description text"></div></li>');
+                    }
+                    var sl = $("#asd").children();
+                    $(".daytime")[i].innerHTML = ds[i].dt_txt;
+                    $(".temp")[i].innerHTML = ds[i].main.temp + "<sup>o</sup>C";
+                    $(".icon")[i].setAttribute("src", 'http://openweathermap.org/img/wn/' + ds[i].weather[0].icon + '@2x.png')
+                    $(".description")[i].innerHTML = ds[i].weather[0].description;
+                }
+                console.log($(".daytime")[0].innerHTML);
+                $(".cityname").text(data.city.name + ", " + data.city.country);
+            }
+        })
+    }
+    setInterval(() => {
+        var date = new Date();
+        var h = date.getHours() < 10 ? h = "0" + date.getHours() : date.getHours(),
+            m = date.getMinutes() < 10 ? m = "0" + date.getMinutes() : date.getMinutes()
+        $(".clock").text(h + " : " + m);
+    }, 1000);
+</script>
+
+</html>
