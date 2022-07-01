@@ -44,7 +44,7 @@ function cd() {
         m--;
     }
     s--;
-    if (m == 0 && s == 0) {
+    if (m < 0 && s < 0) {
         start.disabled = false;
         Tstart.innerHTML = 'Start';
         Tstart.style.fontSize = "13px";
