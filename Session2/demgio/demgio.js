@@ -44,7 +44,7 @@ function cd() {
         m--;
     }
     s--;
-    if (m < 0 && s < 0) {
+    if (m == 0 && s == 0) {
         start.disabled = false;
         Tstart.innerHTML = 'Start';
         Tstart.style.fontSize = "13px";
@@ -67,7 +67,7 @@ stop.addEventListener("mouseup", function() {
 })
 document.getElementById('stop').addEventListener("click", function() {
     clearInterval(bd);
-    if (m == 0 && s == 0) {
+    if (m >= 0 && s >= 0) {
         Tstart.style.fontSize = "9px";
         Tstart.innerHTML = 'Continue';
         start.disabled = false;
