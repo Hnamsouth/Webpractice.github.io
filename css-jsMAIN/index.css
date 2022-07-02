@@ -3,7 +3,7 @@ body {
     color: black;
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
-    background: black !important;
+    background: #282C34 !important;
 }
 
 .ct {
@@ -11,7 +11,7 @@ body {
     padding: 20px;
     border-radius: 5px;
     margin-top: 50px;
-    background: rgb(9, 10, 9);
+    background: #282C34;
     border: 15px solid white;
     border-radius: 3px;
     box-shadow: 5px -5px 10px rgba(21, 233, 248, 1), 15px -15px 50px rgba(21, 233, 248, 0.5), inset -5px 5px 10px rgba(21, 233, 248, 1), inset -15px 15px 50px rgba(21, 233, 248, 0.5), -5px 5px 10px rgba(197, 7, 255, 1), -15px 15px 50px rgba(197, 7, 255, 0.5), inset 5px -5px 10px rgba(197, 7, 255, 1), inset 15px -15px 50px rgba(197, 7, 255, 0.5);
@@ -25,23 +25,35 @@ body {
 }
 
 .ls-ct {
-    justify-content: center
+    justify-content: center;
+    list-style: none;
 }
 
 .ls .ls-ct li {
-    background: white;
+    background: none;
     height: 100px;
+    border: 3px solid white;
     width: calc(100%-30px);
     margin-right: 30px;
     margin-bottom: 30px;
+    color: white;
+}
+
+.ls .ls-ct li a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .ls .ls-ct .logo {
     position: relative;
     background: none !important;
     border: 3px solid white;
-    text-align: center;
-    align-items: center;
+    height: 150px;
     text-shadow: 0 0 10px hsl(0, 94%, 53%), 0 0 20px hsl(0, 94%, 53%);
 }
 
@@ -67,7 +79,7 @@ body {
     padding: 0 15px;
     height: 45px;
     font-size: 35px;
-    background: #111e22;
+    background: #282C34;
     border: 3px solid white;
     color: white;
     display: flex;
@@ -77,4 +89,10 @@ body {
 
 .ls .ls-ct .logo a:hover {
     color: #D44B3E;
+}
+
+.ls .ls-ct {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
 }
