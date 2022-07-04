@@ -13,11 +13,7 @@
 
 <body>
     <div class=" container-sm weather">
-        <div class="ft">
-            <span class="btn1">1asdasda</span>
-            <span class="btn1">2asdasd</span>
-            <span class="btn3">3adsad</span>
-        </div>
+
         <div class="time"><span class="clock"></span></div>
 
         <div class=" d-flex flex-column align-items-center ">
@@ -83,9 +79,6 @@
             m = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()
         $(".clock").text(h + " : " + m);
     }, 1000);
-    var ks;
-    var st = $(".ft")[0].querySelectorAll();
-    console.log(st);
 </script>
 
 </html>
