@@ -15,6 +15,7 @@
     <div class=" container-sm weather">
 
         <div class="time"><span class="clock"></span></div>
+        <div class="time" style="top:50px"><span class="anotherCT"></span></div>
 
         <div class=" d-flex flex-column align-items-center ">
             <input type="text" id="ipCT" placeholder="City">
@@ -42,6 +43,10 @@
         ct = $("#ipCT").val();
         loadcity();
     };
+    var tiz;
+    var city;
+    var cnt;
+    var tont;
 
     function loadcity() {
         $.ajax({
@@ -69,6 +74,18 @@
                     $(".description")[i].innerHTML = ds[i].weather[0].description;
                 }
                 $(".cityname").text(data.city.name + ", " + data.city.country);
+                var bln = true;
+                if (data.city.country != "VN") {
+                    tiz = data.city.timezone;
+                    city = data.city.name;
+                    cnt = data.city.country;
+                    tont = setInterval(function() {
+                        timeont(tiz, city, cnt)
+                    }, 1000);
+                } else {
+                    $(".anotherCT").text("");
+                    clearInterval(tont);
+                }
             }
         })
     }
@@ -77,8 +94,23 @@
         date = new Date();
         var h = date.getHours() < 10 ? "0" + date.getHours() : date.getHours(),
             m = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()
-        $(".clock").text(h + " : " + m);
+        $(".clock").text(h + " : " + m + " - Việt Nam");
     }, 1000);
+
+    function timeont(tz, ontCT, cntry) {
+        var d = new Date();
+        // gettime để lấy giờ địa phương(VN) ĐƯỢC cđ thành mini giây + với số giờ giờ chênh lệch 
+        // getTimezoneOffset lấy giờ chênh lệch (trả về số phút chênh lệch nên nhân 60000 cd thành mini giây )
+        // UTC hiện tại = gettime() + getTimezoneOffset()
+        var utc = date.getTime() + (date.getTimezoneOffset() * 60000);
+        // thêm giờ của city thêm vào thời gian UTC của (vn) 
+        // tìm chênh lẹch múi giờ : môi múi giờ cách nhau 3600 : lấy timezone /3600 sẽ ra múi giờ và nhận với 1 giờ(cd thành mini giây 3600000)
+        var nd = new Date(utc + (3600000 * (tz / 3600)));
+        const hours = nd.getHours() < 10 ? "0" + nd.getHours() : nd.getHours(),
+            minutes = nd.getMinutes() < 10 ? "0" + nd.getMinutes() : nd.getMinutes()
+        $(".anotherCT").text(hours + " : " + minutes + " - " + ontCT + "," + cntry);
+        //console.log(nd.toTimeString());
+    }
 </script>
 
 </html>
