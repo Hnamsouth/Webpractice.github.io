@@ -86,7 +86,7 @@
         if (cntry != "VN") {
             var h = date.getHours() < 10 ? "0" + date.getHours() : date.getHours(),
                 m = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()
-            $(".clock").text(h + " : " + m + " - Việt Nam");
+            $(".clock").text(h + " : " + m + " - Giờ VN");
         } else {
             $(".clock").text("");
         }
@@ -99,7 +99,7 @@
         var nd = new Date(utc + (3600000 * (tz / 3600)));
         const hours = nd.getHours() < 10 ? "0" + nd.getHours() : nd.getHours(),
             minutes = nd.getMinutes() < 10 ? "0" + nd.getMinutes() : nd.getMinutes()
-        $(".anotherCT").text(hours + " : " + minutes + " - " + ontCT + "," + cntry);
+        $(".anotherCT").text(hours + " : " + minutes + " - Giờ " + cntry);
         //console.log(nd.toTimeString());
     }
 </script>
