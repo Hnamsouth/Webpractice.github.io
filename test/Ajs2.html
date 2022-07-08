@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <p>Today's welcome message is:</p>
+        <ul>
+            <li ng-repeat="x in myWelcome">
+                {{ x.City }}
+            </li>
+        </ul>
+        <p>{{hoten}}</p>
+        <p>{{time}}</p>
+        <p>{{hex}}</p>
+        <p>{{test}}</p>
+
+    </div>
+
+    <p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $http, $timeout, $interval, maHEX) {
+            $http.get("test.html").then(function(doiso) {
+                $scope.myWelcome = doiso.data.records;
+            });
+            $timeout(() => {
+                $scope.hoten = "hello";
+            }, 2000);
+            $interval(() => {
+                $scope.time = new Date().toLocaleTimeString();
+            }, 1000);
+            $scope.hex = maHEX.mF(443);
+        });
+        app.service('maHEX', function() {
+            this.mF = function(x) {
+                // tra ve he so(16: thap luc phan) // 2:nhi phan
+                return x.toString(16);
+            }
+        });
+        // neu ctrl duoc goi them o phia duoi thi trinh duyet se thuc thi app ctrl o duoi.
+        // app.ctrl o tren ko duoc thuc thi
+        /*
+        app.controller('myCtrl', function($scope, maHEX) {
+            $scope.myWelcome = doiso.data;
+        });*/
+    </script>
+
+</body>
+
+</html>

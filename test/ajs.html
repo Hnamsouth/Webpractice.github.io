@@ -3,36 +3,58 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 
-<body ng-app="myApp">
+<body>
+    <div ng-app="myApp" ng-controller="namesCtrl">
 
-    <p><a href="#/!">Main</a></p>
+        <table border="1" width="100%">
+            <tr>
+                <th ng-click="orderByMe('name')">Name</th>
+                <th ng-click="orderByMe('country')">Country</th>
+            </tr>
+            <tr ng-repeat="x in names | orderBy:myOrderBy">
+                <td>{{x.name}}</td>
+                <td>{{x.country}}</td>
+            </tr>
+        </table>
 
-    <a href="#!red">Red</a>
-    <a href="#!green">Green</a>
-    <a href="#!blue">Blue</a>
-
-    <div ng-view></div>
+    </div>
 
     <script>
-        var app = angular.module("myApp", ["ngRoute"]);
-        app.config(function($routeProvider) {
-            $routeProvider
-                .when("/", {
-                    templateUrl: "game1.htm"
-                })
-                .when("/red", {
-                    templateUrl: "http://127.0.0.1:5501/test/game1.html"
-                })
-                .when("/green", {
-                    templateUrl: "green.htm"
-                })
-                .when("/blue", {
-                    templateUrl: "blue.htm"
-                });
+        angular.module('myApp', []).controller('namesCtrl', function($scope) {
+            $scope.names = [{
+                name: 'Jani',
+                country: 'Norway'
+            }, {
+                name: 'Carl',
+                country: 'Sweden'
+            }, {
+                name: 'Margareth',
+                country: 'England'
+            }, {
+                name: 'Hege',
+                country: 'Norway'
+            }, {
+                name: 'Joe',
+                country: 'Denmark'
+            }, {
+                name: 'Gustav',
+                country: 'Sweden'
+            }, {
+                name: 'Birgit',
+                country: 'Denmark'
+            }, {
+                name: 'Mary',
+                country: 'England'
+            }, {
+                name: 'Kai',
+                country: 'Norway'
+            }];
+            $scope.orderByMe = function(x) {
+                $scope.myOrderBy = x;
+            }
         });
     </script>
 
-    <p>Click on the links to navigate to "red.htm", "green.htm", "blue.htm", or back to "main.htm"</p>
 </body>
 
 </html>
