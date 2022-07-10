@@ -10,12 +10,12 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://kit.fontawesome.com/57bd35e73b.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
             background: #d2d2d2;
         }
-        
-        .items {}
         
         .items-cnt {
             background: rgb(233, 233, 233);
@@ -29,17 +29,13 @@
             margin-bottom: 10px;
         }
         
-        .items-cnt .img-ct {
-            /* display: flex;
-            flex-direction: column;
-            text-align: center;*/
-        }
-        
         .items-cnt .img-ct img {
             margin-top: 11%;
-            /* width: 60%;
-            margin: auto;
-            margin-bottom: 10px;*/
+            border-radius: 8px;
+        }
+        
+        .items-cnt .img-ct img:hover {
+            transform: scale(1.1);
         }
         
         .price {
@@ -127,24 +123,93 @@
         }
         
         #prod-cl a,
-        #prod-br a {
+        #prod-br a,
+        #p-cl a,
+        #p-br a {
             color: black;
             text-decoration: none;
             font-size: 21px;
             letter-spacing: 1px;
             line-height: 58px;
+            position: relative;
+        }
+        
+        #prod-cl a::after,
+        #prod-br a::after,
+        #p-cl a::after,
+        #p-br a::after {
+            content: '';
+            position: absolute;
+            background: black;
+            height: 1px;
+            width: 0%;
+            bottom: 0;
+            left: 0;
+            transition: all 0.6s;
+        }
+        
+        #prod-cl a:hover::after,
+        #prod-br a:hover::after,
+        #p-cl a:hover::after,
+        #p-br a:hover::after {
+            width: 100%;
         }
         
         #prod-cl a span {
             margin-left: 5px;
         }
         
+        .btn-menu {
+            display: none !important;
+            border: none;
+            border-bottom: 1px solid rgb(0, 0, 0);
+            background: none;
+            padding: 1.5%;
+            display: flex;
+            justify-content: flex-start;
+        }
+        
         @media(max-width: 1200px) {
+            .col-us {
+                width: 20%;
+            }
+            .items .col-3 {
+                width: 40%;
+            }
+            .items {
+                justify-content: center;
+            }
+        }
+        
+        @media(max-width: 992px) {
             .col-us {
                 width: 15%;
             }
             .items .col-3 {
-                width: 30%;
+                width: 45%;
+            }
+            #prod-cl a,
+            #prod-br a {
+                font-size: 17px;
+                line-height: 40px;
+            }
+            .ct-lft {
+                display: none;
+            }
+            .btn-menu {
+                display: block !important;
+            }
+        }
+        
+        @media(max-width: 766px) {
+            .items .col-3 {
+                width: 59%;
+            }
+        }
+        
+        @media(max-width: 400px) {
+            .items .col-3 {
+                width: 69%;
             }
         }
     </style>
@@ -155,13 +220,33 @@
     <section class="section">
         <div class=" container">
             <div class="row content">
-                <div class="col-us col-xl-2">
+                <button type="button" class="btn-menu position-relative" data-bs-toggle="modal" data-bs-target="#myModal">
+                   <i class="fa-solid fa-bars fs-2" style="opacity:0.8;"></i>
+                  </button>
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog modal-fullscreen">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title">Menu</h2>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body row">
+                                <div class="col-6" id="p-cl">
+                                    <h2>Product Categories</h2>
+                                </div>
+                                <div class="col-6" id="p-br">
+                                    <h2>Product brands</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-us col-xl-2 ct-lft">
                     <div id="prod-cl">
                         <h2>Product Categories</h2>
                     </div>
                     <div id="prod-br">
                         <h2>Product brands</h2>
-
                     </div>
                 </div>
                 <div class="col">
@@ -170,7 +255,6 @@
                 </div>
             </div>
         </div>
-
     </section>
 
 
@@ -199,6 +283,7 @@
             for (let i in dt2) {
                 var rd = Math.floor(Math.random() * 30);
                 $("#prod-cl").append('<a href="#">' + dt2[i].name + '<span>(' + rd + ')</span></a></br>');
+                $("#p-cl").append('<a href="#">' + dt2[i].name + '<span>(' + rd + ')</span></a></br>');
             }
         })
     $.get("http://127.0.0.1:5501/html-css-js/html/asd.htm",
@@ -209,8 +294,10 @@
                 var rd = Math.floor(Math.random() * 80);
                 if (i < 5) {
                     $("#prod-br").append('<a href="#">' + dt3[i].name + '<span>(' + rd + ')</span></a></br>');
+                    $("#p-br").append('<a href="#">' + dt3[i].name + '<span>(' + rd + ')</span></a></br>');
                 } else {
                     $("#prod-br").append('<a href="#">Other<span>(' + (dt3.length - 5) + ')</span></a></br>');
+                    $("#p-br").append('<a href="#">Other<span>(' + (dt3.length - 5) + ')</span></a></br>');
                     break;
                 }
             }
