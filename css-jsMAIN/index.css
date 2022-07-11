@@ -214,13 +214,3 @@ body {
 .cln {
     position: relative;
 }
-
-
-/*.cln::after {
-    position: absolute;
-    content: '';
-    width: 500px;
-    height: 17px;
-    background: white;
-    bottom: 20px;
-}*/
