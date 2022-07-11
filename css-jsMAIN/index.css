@@ -27,12 +27,13 @@ body {
 .ls-ct {
     justify-content: center;
     list-style: none;
+    justify-content: space-evenly;
 }
 
 .ls .ls-ct li {
     background: none;
     height: 100px;
-    border: 3px solid white;
+    /* border: 3px solid hsl(0, 100%, 50%); */
     width: calc(100%-30px);
     margin-right: 30px;
     margin-bottom: 30px;
@@ -95,4 +96,115 @@ body {
     color: white;
     font-size: 20px;
     font-weight: 600;
+}
+
+@media(max-width: 992px) {
+    .ls .ls-ct li a {
+        font-size: 20px;
+    }
+    .ls .ls-ct li {
+        height: 70px;
+    }
+}
+
+@media(max-width: 774px) {
+    .ls .ls-ct .logo a {
+        font-size: 55px;
+    }
+    .ls .ls-ct .logo a::after {
+        font-size: 25px;
+    }
+    .ls .ls-ct li {
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    .col-3 {
+        width: 40% !important;
+    }
+    .ls .ls-ct .logo {
+        height: 112px;
+    }
+    .ls .ls-ct .logo::after {
+        top: -22px;
+        height: 40px;
+    }
+    ul {
+        padding-left: 0 !important;
+    }
+}
+
+@media(max-width: 577px) {
+    .container {
+        width: 90% !important;
+    }
+    .ls {
+        padding: 22px;
+    }
+    .ls .ls-ct li {
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+    .col-3 {
+        width: 45% !important;
+    }
+}
+
+@media(max-width: 451px) {
+    .ls {
+        padding: 15px;
+    }
+    .ls .ls-ct .logo {
+        height: 96px;
+    }
+    .ls .ls-ct .logo::after {
+        top: -18px;
+        height: 33px;
+        font-size: 25px;
+    }
+    .ls .ls-ct li {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    .col-3 {
+        width: 44% !important;
+        padding: 0 8px !important;
+    }
+    .ls .ls-ct li {
+        height: 58px;
+    }
+    .ls .ls-ct .logo a {
+        font-size: 40px;
+    }
+    .ls .ls-ct .logo {
+        height: 88px;
+    }
+    .ls .ls-ct li a {
+        font-size: 16px;
+    }
+    .ct {
+        border: 10px solid white;
+    }
+}
+
+@media(max-width: 364px) {
+    .col-3 {
+        width: 90% !important;
+    }
+    .ls .ls-ct .logo a {
+        font-size: 30px;
+    }
+    .ls .ls-ct .logo::after {
+        height: 26px;
+        font-size: 20px;
+        padding: 0 9px;
+    }
+    .ls .ls-ct li a {
+        font-size: 18px;
+    }
+    .ls .ls-ct .logo {
+        height: 73px;
+    }
+    .ls .ls-ct {
+        padding: 0;
+    }
 }

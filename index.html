@@ -69,19 +69,28 @@
 <script src="./css-jsMAIN/mainJS.js"></script>
 <script src="./jquery/jqCompress.js"></script>
 <script>
-    $(document).keydown(event => {
-        var kd = event.which;
-        console.log(kd);
-        if (kd == "122" && kd == "13") {
-            alert("aja");
-        }
-    });
+    var s = $(".ls-ct").children(".col-3");
+    var cl = 0;
     var i = 0;
-    /*
-    setInterval(() => {
-        $(".logo").css("text-shadow", `0 0 10px hsl(${i}, 94%, 53%),0 0 20px hsl(${i}, 94%, 53%)`)
-        i > 359 ? i = 0 : i++;
-    }, 100)*/
+    while (i < s.length) {
+        let pcl = 359 / s.length;
+        s[i].style.border = `3px solid hsl(${cl}, 100%, 50%)`;
+        i++;
+        cl += pcl;
+    }
+    var j = 0;
+    console.log(s.length)
+    var sit = setInterval(() => {
+        j == 0 ? s[s.length - 1].style.boxShadow = "none" : s[j - 1].style.boxShadow = "none";
+        let bsd = `0 0 10px #1cd1e6, 0 0 5px white, inset 0 0 10px #1cd1e6, inset 0 0 5px white`;
+        s[j].style.boxShadow = bsd;
+        j == s.length - 1 ? j = 0 : j++;
+    }, 500);
+    var is = $(".col-3").mouseover(() => {
+        console.log($(this).val().to);
+
+        clearInterval(sit);
+    })
 </script>
 
 </html>
