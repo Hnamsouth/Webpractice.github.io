@@ -26,7 +26,7 @@ input:hover {
     border-color: #1877F2;
 }
 
-div {
+.inpt {
     background: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
@@ -84,12 +84,22 @@ tr th {
 tr td {
     text-align: center;
     width: 200px;
-    padding: 0 10px;
+    padding: 0 5px;
     overflow: hidden;
-    box-sizing: border-box;
+    box-sizing: content-box;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-tr td span {
+.fa-check-circle:before,
+.fa-circle-check:before {
+    content: "\f058";
+    box-shadow: 0 0 6px green;
+    border-radius: 50%;
+}
+
+tr td .name {
+    display: flex;
+    justify-content: center;
     width: 100%;
 }
 
@@ -97,7 +107,7 @@ tr td button {
     position: relative;
     float: left;
     width: 40%;
-    margin-right: 3px;
+    margin: 0 7px;
     height: 30px;
     bottom: -90px;
     border: none;
@@ -151,4 +161,29 @@ td .fa-solid span {
     align-items: center;
     letter-spacing: 1px;
     color: black;
+}
+
+@media(max-width:952px) {
+    tr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    tr th {
+        width: 100%;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    tr td {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 23px;
+        height: 100px;
+    }
+    tr td:hover button {
+        bottom: -2px;
+    }
 }

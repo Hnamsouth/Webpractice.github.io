@@ -10,7 +10,7 @@ const tdmaker = (elm, i, bl) => {
         dp = 'block';
     }
     console.log(bl);
-    document.getElementById('team' + elm.tp).innerHTML += `<td id="t${elm.tp+i}"><i id="i${elm.tp+i}" style="display:${dp}" class="fa-solid fa-circle-check"><span>Team leader</span></i><span class="slt${elm.tp}">${(elm.fn)}</span>
+    document.getElementById('team' + elm.tp).innerHTML += `<td id="t${elm.tp+i}"><i id="i${elm.tp+i}" style="display:${dp}" class="fa-solid fa-circle-check"><span >Team leader</span></i><span class="slt${elm.tp} name">${(elm.fn)}</span>
     <button type="button" onclick="Dlet('team${elm.tp+i}',${elm.tp+i},${elm.tp})"><span>Delete</span></button><button id="btn${elm.tp+i}" type="button" onclick="${b1}(${elm.tp+i},'${elm.fn}',${elm.tp})">${b2}</button></td>`
 }
 
@@ -92,7 +92,7 @@ function render(i) {
     var kq;
     var test = document.querySelectorAll("tr td");
     dsteam.forEach(elm => {
-        kq = `<td id="t${elm.tp+i}"><i id="i${elm.tp+i}"  style="display:none" class="fa-solid fa-circle-check"><span>Team leader</span></i><span class="slt${elm.tp}">${(elm.fn)}</span>
+        kq = `<td id="t${elm.tp+i}"><i id="i${elm.tp+i}"  style="display:none" class="fa-solid fa-circle-check"><span >Team leader</span></i><span class="slt${elm.tp} name" >${(elm.fn)}</span>
         <button type="button" onclick="Dlet('team${elm.tp+i}',${elm.tp+i},${elm.tp})"><span>Delete</span></button><button id="btn${elm.tp+i}" type="button" onclick="pickleader(${elm.tp+i},'${elm.fn}',${elm.tp});">Pick Leader</button></td>`
     });
     return kq;
