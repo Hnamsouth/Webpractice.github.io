@@ -1,0 +1,74 @@
+.logo {
+    background: white;
+    box-shadow: 0 0 8px gray;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    /*transform: translateY(100%);*/
+}
+
+.img {
+    width: 40%;
+}
+
+.hd-ct {
+    position: relative;
+    padding: 45px;
+    font-size: 25px;
+    background: #EFD53B;
+    max-height: 315px;
+}
+
+.form-hd {
+    position: absolute;
+    left: 40%;
+    opacity: 0.8;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.hd-bd {
+    font-size: 40px;
+    letter-spacing: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hd-bd span {
+    font-weight: 500;
+    font-size: 55px !important;
+    margin-left: 35px;
+}
+
+.hd-ct .col-12 {
+    margin-bottom: 50px
+}
+
+.form-ct {
+    margin-top: 100px;
+}
+
+.btn-submit {
+    border: none;
+    background-color: #EF4A3B;
+    color: white;
+    font-weight: 300;
+    font-weight: 400;
+    font-size: 25px;
+    letter-spacing: 2px;
+    padding: 5px 30px;
+}
+
+.form-ct label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.form-ct label input {
+    padding: 10px;
+    margin-top: 10px;
+}

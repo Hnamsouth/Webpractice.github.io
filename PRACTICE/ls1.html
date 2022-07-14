@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Ibs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/ls1.css">
+    <script src="https://kit.fontawesome.com/57bd35e73b.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="header bg-black">
+                <div class="row hd-ct">
+                    <div class="col-12">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <span class=" align-items-center form-hd">Checkout Form</span></div>
+                    <p class="col-12 hd-bd">Toltal To Pay <span style="font-weight:600;font-size:25px">93<sub style="font-size:20px ;">$</sub></span></p>
+                    <div class="col-12 row d-flex justify-content-around">
+                        <span class=" col-5 logo"><img class="img" src="./img/pngaaa.com-176837.png" alt=""></span>
+                        <span class="col-5 logo"><img class="img" src="./img/527px-PayPal_logo.svg.png" alt=""></span>
+                    </div>
+                </div>
+            </div>
+            <form class="form-ct" action="" method="get">
+                <label for="name">Name on Card<input type="text" name="fullname" id="nameC" placeholder="Hoang Nam" required></label>
+                <div class=" d-flex row justify-content-between nb">
+                    <label class="col-6" for="Cnumber">Card Number<input type="number" id="cards" name="cardnumber" minlength="8" maxlength="15" placeholder="015464315344456"></label>
+                    <label class="col-5" for="CVV">CVV <input type="number" id="cvv" placeholder="123" min="100" max="999" required></label>
+                </div>
+                <label for="date">Expiration Date <input type="date" name="date" id=""></label>
+                <button class="btn-submit" type="submit" onclick="sm()">Make A Payment</button>
+            </form>
+        </div>
+    </section>
+</body>
+<style>
+    .nb label input[type=number] {
+        -webkit-text-security: disc;
+    }
+</style>
+
+<script type="text/javascript">
+    function sm() {
+        var s = document.getElementById("cards").ariaValueText.codePointAt;
+        console.log(s)
+    }
+    var sd = document.querySelectorAll("input");
+    console.log(sd);
+    sd.addEventListener("keypress", () => {
+        console.log(this.length);
+    })
+</script>
+
+</html>

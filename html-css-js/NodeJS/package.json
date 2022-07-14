@@ -1,0 +1,12 @@
+{
+    "name": "demo1",
+    "version": "1.0.0",
+    "description": "test nodejs",
+    "main": "node.js",
+    "scripts": {
+        "start": "node newdemo.js",
+        "test": "node test.js"
+    },
+    "author": "hnam17397@gmail.com",
+    "license": "ISC"
+}
