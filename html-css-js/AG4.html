@@ -289,7 +289,7 @@
     $.ajax({
         url: "https://foodgroup.herokuapp.com/api/today-special",
         success: function(data1) {
-            //console.log(data1);
+            console.log(data1);
             var dt = data1.data;
             for (let i in dt) {
                 var price = parseFloat(dt[i].price / 22550).toFixed(2);

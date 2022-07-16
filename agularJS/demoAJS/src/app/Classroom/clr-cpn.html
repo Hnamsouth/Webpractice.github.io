@@ -1,3 +1,26 @@
+<input type="text" [(ngModel)]="classname" placeholder="Class name">
+<!-- khi thay doi gia tri trong input thi bien classname trong cln.ts se thay doi -->
+<!-- huong di : tu html -> ts -> html -->
+<h1>Đây là danh sách sinh viên lớp {{classname}}:</h1>
+<!--  se lap tat ca khoi student component -->
+<app-student *ngFor="let ki of stdlist" [data]="ki">
+</app-student>
+<!-- <h4 *ngFor="let st of stdname; let i=index;">{{stdname[i]}}</h4> -->
 <h1>Class Name {{classname}}</h1>
+
 <button type="button" (click)="changecln()">Change</button>
+<h2>trang thai: {{classStatus}}</h2>
+<button type="button" (click)="ctt2()">Change</button>
+<h2>trang thai:
+    <span *ngIf="classStatus">Hoat dong</span>
+    <span *ngIf="!classStatus">nghi</span>
+</h2>
+<button type="button" (click)="changestatus()">Change</button>
+<h3>dach sach hs:
+    <ul>
+        <li *ngFor="let i of teacher; let j=index; ">{{teacher[j]}}</li>
+    </ul>
+</h3>
+<h4></h4>
 <hr>
+<!--  directive: dieu khien luong -->
