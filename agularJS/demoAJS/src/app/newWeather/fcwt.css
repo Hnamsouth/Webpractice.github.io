@@ -1,0 +1,55 @@
+.col-2 {
+    padding: 10px !important;
+    margin-bottom: 25px !important;
+    margin-right: 25px !important;
+    width: 22.66666667% !important;
+}
+
+.child {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    color: white !important;
+}
+
+.row {
+    justify-content: center !important;
+}
+
+.inp-city {
+    position: relative;
+    padding: 8px;
+    text-align: center;
+    font-size: 35px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+    color: white;
+    margin: 25px 0;
+}
+
+.btn-search {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 6px;
+    border: 3px solid white;
+    border-radius: 15px;
+    font-size: 25px;
+    color: white;
+    margin: 25px 0;
+}
+
+.btn-search:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.location {
+    color: white;
+    font-size: 50px;
+    padding: 5px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}

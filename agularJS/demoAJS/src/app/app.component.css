@@ -1,0 +1,5 @@
+body {
+    background-image: url(./newWeather/img/image.jpg) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

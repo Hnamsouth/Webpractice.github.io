@@ -1,0 +1,25 @@
+.text {
+    font-weight: 600 !important;
+    font-size: 18px;
+}
+
+.temp {
+    font-size: 40px !important;
+    font-weight: 600 !important;
+}
+
+.nd {
+    display: flex;
+    align-items: center
+}
+
+.t-ct {
+    align-items: center !important;
+}
+
+.description {
+    font-style: italic;
+    font-size: 20px;
+    text-transform: capitalize;
+    opacity: 0.9;
+}

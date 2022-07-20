@@ -1,0 +1,6 @@
+<div class="row-cols-3 text daytime">
+    {{data.dt_txt}}</div>
+<div class="row t-ct"><span class="col-7 temp">{{data.main.temp}}<sup>o</sup>C</span>
+    <img class="col" src="http://openweathermap.org/img/wn/{{data.weather[0].icon}}@2x.png">
+</div>
+<div class="description">{{data.weather[0].description}}</div>
