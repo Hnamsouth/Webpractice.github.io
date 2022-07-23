@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { ɵHttpInterceptingHandler } from '@angular/common/http';
+import { Component, importProvidersFrom } from '@angular/core';
+import { __importDefault } from 'tslib';
 import { ISClassname } from './datatranferObject/student.interface';
 
 @Component({
@@ -31,3 +33,4 @@ export class AppComponent {
   }
 ]
 }
+
