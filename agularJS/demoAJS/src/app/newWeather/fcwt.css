@@ -5,6 +5,12 @@
     width: 22.66666667% !important;
 }
 
+.wt-bg {
+    background-image: url(./img/image.jpg) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .child {
     background-color: rgba(255, 255, 255, 0.1);
     border: 2px solid white;

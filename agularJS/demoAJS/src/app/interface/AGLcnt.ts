@@ -1,4 +1,4 @@
-export interface Datum {
+export interface Food {
   id: number;
   name: string;
   image: string;
@@ -6,7 +6,7 @@ export interface Datum {
   price: number;
 }
 
-export interface IScnt {
+export interface DataRice {
   message: string;
-  data: Datum[];
+  data: Food[];
 }

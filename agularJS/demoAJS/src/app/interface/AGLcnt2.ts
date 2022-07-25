@@ -4,7 +4,7 @@ export interface Category {
   icon: string;
 }
 
-export interface Food {
+export interface Food1 {
   id: number;
   name: string;
   image: string;
@@ -14,7 +14,7 @@ export interface Food {
 
 export interface Data {
   category: Category;
-  foods: Food[];
+  foods: Food1[];
 }
 
 export interface IScnt2 {

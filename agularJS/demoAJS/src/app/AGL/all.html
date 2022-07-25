@@ -1,0 +1,28 @@
+<div class="category row container m-auto">
+    <div class="col-3" id="prod-cl">
+        <h1>Category</h1>
+        <div *ngFor="let i of datamenu;let j=index">
+            <a type="button" (click)="changecnt(j)">{{i.name}}</a>
+        </div>
+
+    </div>
+    <div class="col row">
+        <div class="col-3 items-cnt m-3 " *ngFor="let i of fooddata">
+            <div class="img-ct row">
+                <div class="col-2 "><span class="if-text">New</span></div><img class="col-8" src="{{i.image}}" alt="">
+                <div class="col-2 contact">
+
+                </div>
+            </div>
+            <div style="height: 38px;">
+                <h6 class="name">{{i.name}}</h6>
+            </div>
+            <div class="price">
+                <div><span class="price-cr">${{((i.price/23405)*100/70).toFixed(2)}}</span><span class="price-old">${{(i.price/23405).toFixed(2)}}</span></div>
+                <div>
+                    <span class="fa fa-star"></span>
+                </div>
+                <button class="add-items" type="submit">Add</button>
+            </div>
+        </div>
+    </div>

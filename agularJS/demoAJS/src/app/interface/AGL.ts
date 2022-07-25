@@ -1,4 +1,4 @@
-export interface Datum {
+export interface data1 {
   id: number;
   name: string;
   icon: string;
@@ -6,5 +6,5 @@ export interface Datum {
 
 export interface IScategory {
   message: string;
-  data: Datum[];
+  data: data1[];
 }

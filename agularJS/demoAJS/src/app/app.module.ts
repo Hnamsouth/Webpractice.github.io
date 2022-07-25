@@ -12,9 +12,15 @@ import { Status } from './newLesson/class';
 import { FCWT } from './newWeather/fcwt';
 import { Studentcomponent } from './students/st-components';
 import { HomeComponent } from './home/home.component';
+import { CategoryComponent } from './AGL/all';
+
 const approuter:Routes=[
   {path:'weather',component:FCWT},
   {path:'class',component:Classroom},
+  {path:'category',component:CategoryComponent},
+  {path:'',component:FCWT}
+  // {path:'cnt0',redirectTo:'weather',pathMatch:'full'},
+  // {path:'cnt2',component:Cnt2}
 
 ]
 @NgModule({
@@ -26,7 +32,9 @@ const approuter:Routes=[
     Status,
     FCWT,
     ChildFCWT,
-    HomeComponent
+    HomeComponent,
+    CategoryComponent,
+
   ],
   imports: [
     BrowserModule,
