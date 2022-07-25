@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { ISstudent } from "../datatranferObject/student.interface";
+import { ISstudent } from "../interface/student.interface";
 @Component({
   selector:'new-cpn',
   templateUrl:'./clr-cpn.html',

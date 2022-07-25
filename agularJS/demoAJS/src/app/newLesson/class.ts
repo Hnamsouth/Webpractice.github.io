@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { ISClassname } from "../datatranferObject/student.interface";
+import { ISClassname } from "../interface/student.interface";
 @Component({
   selector:"class-ls",
   templateUrl:"./class.html",

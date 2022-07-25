@@ -4,7 +4,7 @@ import { City, ForeCastWT, List } from "../interface/FCwt";
 @Component({
   selector:"fc-wt",
   templateUrl:"./wt.html",
-  styleUrls:["./fcwt.css"]
+  styleUrls:["./fcwt.css","../app.component.css"],
 })
 export class FCWT{
   array:List[]|undefined;

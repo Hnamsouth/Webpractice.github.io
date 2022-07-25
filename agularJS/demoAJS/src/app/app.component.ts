@@ -1,7 +1,7 @@
 import { ɵHttpInterceptingHandler } from '@angular/common/http';
 import { Component, importProvidersFrom } from '@angular/core';
 import { __importDefault } from 'tslib';
-import { ISClassname } from './datatranferObject/student.interface';
+import { ISClassname } from './interface/student.interface';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,9 @@ import { ISClassname } from './datatranferObject/student.interface';
 })
 export class AppComponent {
   title = 'demoAJS';
+  class={
+    id:14
+  };
   StdRCLR:ISClassname[]=[
   {
     classname:"T2204M",

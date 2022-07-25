@@ -1,47 +1,52 @@
 <!-- <new-cpn>
 </new-cpn>
-<app-student></app-student> -->
-<!-- <class-ls *ngFor="let i of StdRCLR" [data]="i"></class-ls> -->
-<!-- <ft-cpn></ft-cpn> -->
-<!--- index.html -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="d-flex align-items-start">
-        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
-            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
-            <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
-            <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
-        </div>
-        <div class="tab-content" id="v-pills-tabContent">
-            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">.1..</div>
-            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">.31231..</div>
-            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">.213..</div>
-            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+<app-student></app-student>
+<class-ls *ngFor="let i of StdRCLR" [data]="i"></class-ls>
+<fc-wt></fc-wt> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="">Navbar</a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="weather">Weather</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="class">Class</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="">Disabled</a>
+                </li>
+            </ul>
         </div>
     </div>
-    <!-- <nav>
-        <ul>
-            <li><a href="#" routerLink="class-r">Class Room</a></li>
-            <li><a href="#" routerLink="weather">Weather</a></li>
-        </ul>
-    </nav>
-    <section class="container-lg">
+</nav>
+<div class="body">
+    <router-outlet></router-outlet>
+</div>
+<!-- <nav>
+    <ul>
+        <li><a routerLink="app1">app2</a></li>
+                <li><a routerLink="app2">app2</a></li>
+                <li><a routerLink="weather">Weather</a></li>
+                <li>
+                    <a [routerLink]="['/class',class.id]">asdasdsa</a>
+                </li>
+            </ul>
+</nav>
+<section class="container-lg row">
+    <div class="col-6">
         <router-outlet></router-outlet>
-    </section> -->
-    <!-- <agl-app></agl-app> -->
-</body>
+        <app-home></app-home>
+    </div>
+    <div class="col">
+        <router-outlet name="appRT"></router-outlet>
+    </div>
 
-</html>
+</section> -->

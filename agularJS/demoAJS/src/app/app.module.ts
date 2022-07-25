@@ -6,30 +6,27 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AGL } from './AssignmentAGL/AGL';
-import { CNTcpn } from './AssignmentAGL/CTleft';
 import { ChildFCWT } from './childNewWt/childFcwt';
 import { Classroom } from './Classroom/Clr-components';
 import { Status } from './newLesson/class';
 import { FCWT } from './newWeather/fcwt';
 import { Studentcomponent } from './students/st-components';
-import { XyzComponent } from './xyz/xyz.component';
+import { HomeComponent } from './home/home.component';
 const approuter:Routes=[
   {path:'weather',component:FCWT},
-  {path:'class-r',component:Classroom},
-  {path:'cnt1',component:CNTcpn}
+  {path:'class',component:Classroom},
+
 ]
 @NgModule({
   // khai bao các component
   declarations: [
     AppComponent,
-    XyzComponent,
     Classroom,
     Studentcomponent,
     Status,
     FCWT,
     ChildFCWT,
-    AGL
+    HomeComponent
   ],
   imports: [
     BrowserModule,
