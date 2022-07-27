@@ -1,18 +1,75 @@
+<h1>Thuc hanh From</h1>
+<!--  formGroup được duy trì từ các thành viên của nó. Sau khi bạn xác định(or tao) form, bạn phải cập nhật mẫu để phản ánh mô hình(form) trong dạng xem. -->
+<!-- ngSubmit Phương onSubmit()thức trong ProfileEditorthành phần nắm bắt giá trị hiện tại của profileForm -->
+<form [formGroup]="profile" (ngSubmit)="onSubmit()">
+    <!-- Name input -->
+    <div class="form-outline mb-4">
+        <!-- lien ket thuoc tinh formcontrol voi "bien" name  -->
+        <!-- formcontrol duoc cung  cap trong FormControlDirective tu ReactiveFormsModule. -->
+        <input type="text" id="form5Example1" class="form-control" [formControl]="name" />
+        <label class="form-label" for="name">Name</label>
+        <p>name: {{name.value}}</p>
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input type="email" id="form5Example2" class="form-control" />
+        <label class="form-label" for="form5Example2">Email address</label>
+    </div>
+    <!--  them thuoc tinh required de  -->
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstname" required>
+
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastname" required>
+
+    <!-- Checkbox -->
+    <div class="form-check d-flex justify-content-center mb-4">
+        <input class="form-check-input me-2" type="checkbox" value="" id="form5Example3" checked />
+        <label class="form-check-label" for="form5Example3">
+      I have read and agree to the terms
+    </label>
+    </div>
+
+    <!-- Submit button -->
+    <p>Complete the form to enable button.</p>
+    <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="!profile.valid">Submit</button>
+    <!-- <button type="submit" class="btn btn-primary btn-block mb-4">Subscribe</button>| -->
+    <button type="button" class="btn btn-primary btn-block mb-4" (click)="updateName()">Update Name</button>
+</form>
+<hr>
 <input type="text" [(ngModel)]="classname" placeholder="Class name">
 <!-- khi thay doi gia tri trong input thi bien classname trong cln.ts se thay doi -->
 <!-- huong di : tu html -> ts -> html -->
 <h1>Đây là danh sách sinh viên lớp {{classname}}:</h1>
-<!--  se lap tat ca khoi student component -->
-<app-student *ngFor="let ki of stdlist" [data]="ki">
-</app-student>
+
 <!-- <h4 *ngFor="let st of stdname; let i=index;">{{stdname[i]}}</h4> -->
 <h1>Class Name {{classname}}</h1>
-
-<button type="button" (click)="changecln()">Change</button>
+<hr>
+<h2>Tuoi cua lon:{{age}}
+    <span *ngIf="age<18 " class="duoi18">Duoi 18+</span>
+    <span class="tren18" *ngIf="age>=18">Tren 18+</span>
+</h2>
+<hr>
+<span *ngIf="age>=18; then dieukien1; else dieukien2"></span>
+<!-- neu age>18 ==true thi thuc thi dieukien1 nguoc lai se thuc thi dieu kien 2 -->
+<ng-template #dieukien1>tren 18+</ng-template>
+<ng-template #dieukien2> duoi 18+</ng-template>
+<button type="button" (click)="congtuoi()">Cong tuoi</button>
+<button type="button" (click)="trutuoi()">Tru tuoi</button>
+<hr>
+<h1 style="color:red">Pipe</h1>
+<!-- dang sau dau | la bo loc kieu du lieu cua thuoc tinh -->
+<!-- va dinh dang cua kieu loc  -->
+<b>loc 1 so voi dinh dang khac(15.256515) {{floatnumber|number :'0.0-2'|currency}}</b> <br>
+<p>cac pipe co the long cung nhau</p>
+<span>loc 1 mang thanh 1 json: <br>{{teacher}} <br>{{teacher|json}}</span>
+<hr>
 <h2>trang thai: {{classStatus}}</h2>
 <button type="button" (click)="ctt2()">Change</button>
 <h2>trang thai:
     <span *ngIf="classStatus">Hoat dong</span>
+    <!-- neu thuoc tinh classStatus == true thi hien thi tag nay -->
     <span *ngIf="!classStatus">nghi</span>
 </h2>
 <button type="button" (click)="changestatus()">Change</button>
@@ -21,6 +78,8 @@
         <li *ngFor="let i of teacher; let j=index; ">{{teacher[j]}}</li>
     </ul>
 </h3>
-<h4></h4>
-<hr>
+<!--  se lap tat ca khoi student component -->
+
+<app-student *ngFor="let ki of stdlist" [data]="ki">
+</app-student>
 <!--  directive: dieu khien luong -->

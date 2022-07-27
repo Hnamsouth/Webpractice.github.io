@@ -1,6 +1,6 @@
 import {  HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -13,6 +13,7 @@ import { FCWT } from './newWeather/fcwt';
 import { Studentcomponent } from './students/st-components';
 import { HomeComponent } from './home/home.component';
 import { CategoryComponent } from './AGL/all';
+import { FormComponent } from './form/form.component';
 
 const approuter:Routes=[
   {path:'weather',component:FCWT},
@@ -34,6 +35,7 @@ const approuter:Routes=[
     ChildFCWT,
     HomeComponent,
     CategoryComponent,
+    FormComponent,
 
   ],
   imports: [
@@ -41,6 +43,8 @@ const approuter:Routes=[
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,// su dung dieu khien Form
+
     RouterModule.forRoot(approuter)
   ],
   providers: [],
