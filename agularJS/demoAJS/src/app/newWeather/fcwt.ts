@@ -1,5 +1,6 @@
 import { HttpClient ,HttpParams} from "@angular/common/http";
 import { Component,OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { City, ForeCastWT, List } from "../interface/FCwt";
 @Component({
   selector:"fc-wt",
@@ -17,6 +18,7 @@ export class FCWT{
   }
   constructor(private http:HttpClient){
     this.onSubmit();
+
   }
   onSubmit(){
     const url = 'https://api.openweathermap.org/data/2.5/forecast';
@@ -27,10 +29,13 @@ export class FCWT{
     params =  params.append('lang','vi');
     this.http.get<ForeCastWT>(url,{params: params})
       .subscribe(value=>{
+
         this.array = value.list;
+        // console.log(this.array)
         this.location=value.city;
       });
   }
+
 }
 
 /*

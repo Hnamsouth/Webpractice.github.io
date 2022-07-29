@@ -1,0 +1,24 @@
+<h2>{{country}}</h2>
+<h4>Time: {{fcwtdetails.dt_txt}}</h4>
+<strong>Clouds: </strong><span> {{fcwtdetails.clouds.all}} %</span>
+<div>
+    <strong>Temp: </strong>
+    <ul>
+        <li>Humidity: {{fcwtdetails.main.humidity}} <strong>%</strong></li>
+        <li>pressure: {{fcwtdetails.main.pressure}} </li>
+        <li>temp: {{fcwtdetails.main.temp}} <sup>o</sup> <strong>C</strong></li>
+        <li>temp_max: {{fcwtdetails.main.temp_max}} <sup>o</sup> <strong>C</strong></li>
+        <li>temp_min: {{fcwtdetails.main.temp_min}} <sup>o</sup> <strong>C</strong></li>
+    </ul>
+</div>
+<div>
+    <strong>Weather: </strong><br>
+    <div class=" d-flex align-items-center">
+        <img style="float:left" src="http://openweathermap.org/img/wn/{{fcwtdetails.weather[0].icon}}@2x.png" alt="">
+        <div>
+            <p>{{fcwtdetails.weather[0].description}}</p>
+            <p>{{fcwtdetails.wind.speed}} Km/h</p>
+        </div>
+    </div>
+</div>
+<button type="button" routerLink="/">Back</button>
