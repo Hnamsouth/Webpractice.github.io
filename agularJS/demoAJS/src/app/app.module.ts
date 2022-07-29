@@ -17,7 +17,10 @@ import { FormComponent } from './form/form.component';
 
 const approuter:Routes=[
   {path:'weather',component:FCWT},
-  {path:'class',component:Classroom},
+  {path:'class',component:Classroom,children:[
+    {path:'weather2',component:FCWT}
+  ]},
+  {path:'categorychild',component:CategoryComponent},
   {path:'category',component:CategoryComponent},
   {path:'',component:FCWT}
   // {path:'cnt0',redirectTo:'weather',pathMatch:'full'},

@@ -7,16 +7,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="weather">Weather</a>
+                    <a class="nav-link active" aria-current="page" routerLink="/weather">Weather</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="class">Class</a>
+                    <a class="nav-link" routerLink="/class">Class</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="category">Category</a>
+                    <a class="nav-link" routerLink="/category">Category</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="">Disabled</a>
+                    <a class="nav-link" routerLink="/">Disabled</a>
                 </li>
             </ul>
         </div>
@@ -24,4 +24,5 @@
 </nav>
 <div class="body">
     <router-outlet></router-outlet>
+    <router-outlet name="test"></router-outlet>
 </div>
