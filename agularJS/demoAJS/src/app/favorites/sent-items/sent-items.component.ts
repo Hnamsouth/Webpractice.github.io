@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -328,9 +329,18 @@ export class FVRSentItemsComponent implements OnInit {
     sayHi:'Hi Halle Lindsey'
   }
 ]
-  constructor() { }
+stig:string|undefined;
+
+
+  constructor() {
+    var main=localStorage.setItem('items',JSON.stringify(this.items));
+    // Test
+    var test =localStorage.getItem('items');
+    this.stig=JSON.parse(localStorage.getItem('items')!);
+  }
 
   ngOnInit(): void {
+    // JSON.parse(main)
   }
 
 }

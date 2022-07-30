@@ -9,28 +9,40 @@ import { Education, ISsentItemDetail, Profile, WorkExpreience } from 'src/app/in
   styleUrls: ['./sent-items-detail.component.css']
 })
 export class SentItemsDetailComponent implements OnInit {
-  constructor(private route:ActivatedRoute, private http:HttpClient) { }
+  //  JSON fake server
   url='http://localhost:3000/profile';
   details!:Profile[]|undefined;
   workExpreience!:WorkExpreience[]|undefined;
   education!:Education[]|undefined;
   dataDetails!:Profile|undefined;
-  namejob='';
-  ngOnInit(): void {
+  namejob:string|undefined='';
+
+  // Dung local Storge
+  constructor(private route:ActivatedRoute, private http:HttpClient) {
+    var test =localStorage.getItem('items');
+    let s=JSON.parse(localStorage.getItem('items')!);
+    console.log(s[0])
     this.route.params.subscribe(param=>{
-      this.http.get<Profile[]>(this.url)
-      .subscribe(value =>{
-        value.forEach((elm,index )=>{
-          console.log(index)
-          if(index==param['id']){
-            console.log(elm)
-            this.dataDetails=elm;
-            this.education=elm?.info?.education;
-            this.workExpreience=elm?.info?.workExpreience;
-            this.namejob= this.workExpreience[0].describe.namejob;
-          }
-        })
-      });
+      this.dataDetails=s[param['id']];
+      this.education=this.dataDetails?.info?.education;
+      this.workExpreience=this.dataDetails?.info?.workExpreience;
+      this.namejob= this.dataDetails?.info?.workExpreience[0].describe.namejob;
     });
+    }
+
+  ngOnInit(): void {
+    // this.route.params.subscribe(param=>{
+    //   this.http.get<Profile[]>(this.url)
+    //   .subscribe(value =>{
+    //     value.forEach((elm,index )=>{
+    //       if(index==param['id']){
+    //         this.dataDetails=elm;
+    //         this.education=elm?.info?.education;
+    //         this.workExpreience=elm?.info?.workExpreience;
+    //         this.namejob= this.workExpreience[0].describe.namejob;
+    //       }
+    //     })
+    //   });
+    // });
   };
 }
