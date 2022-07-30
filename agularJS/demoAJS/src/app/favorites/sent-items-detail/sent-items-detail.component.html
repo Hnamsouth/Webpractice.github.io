@@ -5,7 +5,7 @@
         flex-direction: column;
         justify-content: space-around;">
             <div class=" d-flex justify-content-center">
-                <svg style="    background: rgb(215, 215, 215);border-radius: 50%;" xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <svg [style.color]="color" style="background: rgb(215, 215, 215);border-radius: 50%;" xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
               <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
             </svg>
             </div>
@@ -27,7 +27,7 @@
         <div class="col-sm-9">
             <div class="row">
                 <div class="col-sm-3">
-                    <h1>{{dataDetails?.fullname}}</h1>
+                    <h1>{{dataDetails?.name}}</h1>
                     <p>{{namejob}}</p>
                 </div>
                 <div class="col-sm-9" style="text-align: end;">
@@ -71,7 +71,7 @@
                 <h2>EDUCATION</h2>
                 <div class="col-sm-4">
                     <div *ngFor="let k of education">
-                        <h3>{{k.school.studyingarea}}</h3>
+                        <h3>{{k.school.name}}</h3>
                         <p>{{k.school.studyingarea}}</p>
                         <p>{{k.school.timelearn}}</p>
                     </div>

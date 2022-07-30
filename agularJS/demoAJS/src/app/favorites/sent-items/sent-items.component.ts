@@ -330,8 +330,7 @@ export class FVRSentItemsComponent implements OnInit {
   }
 ]
 stig:string|undefined;
-
-
+  allcolor=['#6f42c1','#d63384','#fd7e14','#198754','#0d6efd']
   constructor() {
     var main=localStorage.setItem('items',JSON.stringify(this.items));
     // Test

@@ -11,7 +11,7 @@ export interface WorkExpreience {
 }
 
 export interface School {
-  Schoolname: string;
+  name: string;
   studyingarea: string;
   timelearn: string;
 }
@@ -40,7 +40,7 @@ export interface Info {
 }
 
 export interface Profile {
-  fullname: string;
+  name: string;
   info: Info;
   message: string;
   sayHi: string;
