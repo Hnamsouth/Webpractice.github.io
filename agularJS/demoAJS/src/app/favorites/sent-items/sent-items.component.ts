@@ -337,7 +337,6 @@ stig:string|undefined;
     var test =localStorage.getItem('items');
     this.stig=JSON.parse(localStorage.getItem('items')!);
   }
-
   ngOnInit(): void {
     // JSON.parse(main)
   }
