@@ -1,0 +1,24 @@
+.avata {
+    background-color: #DDE2E7;
+    border-radius: 50%;
+    width: 141px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.items {
+    padding: 8px;
+}
+
+.items p {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.items .message {
+    font-weight: 400;
+    font-size: 18px;
+    opacity: 0.8;
+}

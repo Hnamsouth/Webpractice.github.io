@@ -16,6 +16,14 @@ import { CategoryComponent } from './AGL/all';
 import { FormComponent } from './form/form.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FCWTdetailComponent } from './childNewWt/fcwtdetail.component';
+import { FVRInboxComponent } from './favorites/inbox/inbox.component';
+import { FVRSentItemsComponent } from './favorites/sent-items/sent-items.component';
+import { InboxComponent } from './John/inbox/inbox.component';
+import { SentsItemsComponent } from './John/sents-items/sents-items.component';
+import { DeletedItemsComponent } from './John/deleted-items/deleted-items.component';
+import { DraftsComponent } from './John/drafts/drafts.component';
+import { OutBoxComponent } from './John/out-box/out-box.component';
+import { SentItemsDetailComponent } from './favorites/sent-items-detail/sent-items-detail.component';
 
 const approuter:Routes=[
 
@@ -34,7 +42,15 @@ const approuter:Routes=[
     HomeComponent,
     CategoryComponent,
     FormComponent,
-    FCWTdetailComponent
+    FCWTdetailComponent,
+    FVRInboxComponent,
+    FVRSentItemsComponent,
+    InboxComponent,
+    SentsItemsComponent,
+    DeletedItemsComponent,
+    DraftsComponent,
+    OutBoxComponent,
+    SentItemsDetailComponent
 
   ],
   imports: [
