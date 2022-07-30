@@ -10,8 +10,14 @@ import { ISClassname } from './interface/student.interface';
 })
 export class AppComponent {
   favoritesList=['Inbox','Sent Items']
-  JohnList=['Inbox','Drafts','Deleted Items','Sent Items','OutBox']
+  JohnList=['Inbox','Drafts','Deleted Items','Sent Items','OutBox'];
+  displaybars='none';
+
   constructor (private http:HttpClient){
+
+  }
+  show(){
+  this.displaybars=this.displaybars==='none'?'block':'none';
   }
 }
 
