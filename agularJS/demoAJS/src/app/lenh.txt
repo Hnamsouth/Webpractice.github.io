@@ -1,0 +1,2 @@
+npm install -g json-server  : cai json server
+json-server --watch db.json   start json serves

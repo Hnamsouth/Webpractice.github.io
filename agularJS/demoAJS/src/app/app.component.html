@@ -43,34 +43,27 @@
         <div class="row">
             <div class="col-3 cnt-left p-5">
                 <div>
-                    <h1 (click)="show()">Favorites</h1>
+                    <h1 (click)="show('displayFVR')">Favorites</h1>
                     <ul>
-                        <div [style.display]="displaybars">
+                        <div [style.display]="displayFVR">
                             <li *ngFor="let i of favoritesList;let j=index"><a routerLink="favorites{{j}}">{{i}}</a></li>
                         </div>
                     </ul>
                 </div>
                 <div>
-                    <h1 (click)="show()">John</h1>
+                    <h1 (click)="show('displayJohn')">John</h1>
                     <ul>
-                        <div #bar1 [style.display]="displaybars">
+                        <div #bar1 [style.display]="displayJohn">
                             <li *ngFor="let i of JohnList;let j=index"><a routerLink="john{{j}}">{{i}}</a></li>
                         </div>
                     </ul>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#demo">Simple collapsible</button>
-
-
             <div class="col cnt-right" style="padding-left: 0;">
                 <router-outlet></router-outlet>
             </div>
         </div>
     </section>
-    <!-- <div id="demo" class="collapse">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </div> -->
-
 </body>
 
 

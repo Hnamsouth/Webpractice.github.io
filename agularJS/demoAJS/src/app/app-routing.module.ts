@@ -8,6 +8,7 @@ import { CategoryComponent } from './AGL/all';
 import { FCWTdetailComponent } from './childNewWt/fcwtdetail.component';
 import { Classroom } from './Classroom/Clr-components';
 import { FVRInboxComponent } from './favorites/inbox/inbox.component';
+import { SentItemsDetailComponent } from './favorites/sent-items-detail/sent-items-detail.component';
 import { FVRSentItemsComponent } from './favorites/sent-items/sent-items.component';
 import { DeletedItemsComponent } from './John/deleted-items/deleted-items.component';
 import { DraftsComponent } from './John/drafts/drafts.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:'john2',component:DeletedItemsComponent},
   {path:'john3',component:SentsItemsComponent},
   {path:'john4',component:OutBoxComponent},
+  {path:'detail/:id',component:SentItemsDetailComponent},
   {path:'',component:FVRSentItemsComponent}
 ];
 
