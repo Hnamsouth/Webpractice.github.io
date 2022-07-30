@@ -19,7 +19,6 @@ export class SentItemsDetailComponent implements OnInit {
 
   // Dung local Storge
   constructor(private route:ActivatedRoute, private http:HttpClient) {
-    var test =localStorage.getItem('items');
     let s=JSON.parse(localStorage.getItem('items')!);
     console.log(s[0])
     this.route.params.subscribe(param=>{
