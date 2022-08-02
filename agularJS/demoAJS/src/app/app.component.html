@@ -46,7 +46,7 @@
         padding: 14px;">
             <div class="col-3 cnt-left p-5">
                 <div>
-                    <h1 (click)="show('displayFVR')">Favorites</h1>
+                    <h1 class="m-cnt " (click)="show('displayFVR')">Favorites</h1>
                     <ul>
                         <div [style.display]="displayFVR">
                             <li *ngFor="let i of favoritesList;let j=index"><a routerLink="favorites{{j}}">{{i}}</a></li>
@@ -54,7 +54,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h1 (click)="show('displayJohn')">John</h1>
+                    <h1 class="m-cnt" (click)="show('displayJohn')">John</h1>
                     <ul>
                         <div #bar1 [style.display]="displayJohn">
                             <li *ngFor="let i of JohnList;let j=index"><a routerLink="john{{j}}">{{i}}</a></li>

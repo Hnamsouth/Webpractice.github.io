@@ -1,3 +1,31 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "demoSQL",
+            "database": "Students",
+            "username": "hnam",
+            "password": "afm17397"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MariaDB",
+            "name": "hsouth97",
+            "username": "hoangnam1997",
+            "database": "student",
+            "password": ""
+        }
+    ]
 }

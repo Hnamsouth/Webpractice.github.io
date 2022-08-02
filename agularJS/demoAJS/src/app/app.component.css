@@ -16,3 +16,23 @@
 .cnt-left ul li:hover a {
     text-decoration: underline;
 }
+
+.m-cnt {
+    position: relative;
+}
+
+.m-cnt::after {
+    position: absolute;
+    content: '';
+    height: 5px;
+    width: 0;
+    background: black;
+    bottom: 0;
+    left: 0;
+    transition: all 1s;
+}
+
+.m-cnt:hover::after {
+    width: 100% !important;
+    color: red !important;
+}
