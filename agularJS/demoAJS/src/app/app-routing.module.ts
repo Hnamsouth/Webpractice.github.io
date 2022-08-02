@@ -18,21 +18,21 @@ import { SentsItemsComponent } from './John/sents-items/sents-items.component';
 import { FCWT } from './newWeather/fcwt';
 
 const routes: Routes = [
-  // {path:'weather',component:FCWT},
-  // {path:'class',component:Classroom},
-  // {path:'FCWTdetail/:id/:city',component:FCWTdetailComponent},
-  // {path:'categorychild',component:CategoryComponent},
-  // {path:'category',component:CategoryComponent},
-  // {path:'',component:FCWT,pathMatch:'full'},
-  {path:'favorites0',component:FVRInboxComponent},
-  {path:'favorites1',component:FVRSentItemsComponent},
-  {path:'john0',component:InboxComponent},
-  {path:'john1',component:DraftsComponent},
-  {path:'john2',component:DeletedItemsComponent},
-  {path:'john3',component:SentsItemsComponent},
-  {path:'john4',component:OutBoxComponent},
-  {path:'detail/:id',component:SentItemsDetailComponent},
-  {path:'',component:FVRSentItemsComponent}
+  {path:'weather',component:FCWT},
+  {path:'class',component:Classroom},
+  {path:'FCWTdetail/:id/:city',component:FCWTdetailComponent},
+  {path:'categorychild',component:CategoryComponent},
+  {path:'category',component:CategoryComponent},
+  {path:'',component:FCWT,pathMatch:'full'},
+  // {path:'favorites0',component:FVRInboxComponent},
+  // {path:'favorites1',component:FVRSentItemsComponent},
+  // {path:'john0',component:InboxComponent},
+  // {path:'john1',component:DraftsComponent},
+  // {path:'john2',component:DeletedItemsComponent},
+  // {path:'john3',component:SentsItemsComponent},
+  // {path:'john4',component:OutBoxComponent},
+  // {path:'detail/:id',component:SentItemsDetailComponent},
+  // {path:'',component:FVRSentItemsComponent}
 ];
 
 @NgModule({

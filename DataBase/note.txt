@@ -1,0 +1,18 @@
+back end: 
+    lấy giữ liệu từ database hoặc gửi dữ liệu về cho database
+    hệ quản trị csdl : sql server or mysql ...
+    SQL : ngôn ngữ truy vấn dữ liệu.
+
+    - Tạo sơ đồ csdl ERD 
+
+Hình chữ nhật: Biểu diễn cho kiểu loại của thực thể
+
+Hình Ellipses: Biểu diễn cho các thuộc tính
+
+Hình thoi: Biểu diễn cho các loại mối quan hệ
+
+Đường kẻ: Nó liên kết các thuộc tính với các kiểu loại thực thể và các kiểu thực thể với các kiểu mối quan hệ khác
+
+Khóa chính: Là các thuộc tính được gạch chân
+
+Hình Ellipses có 2 cạnh: Bểu diễn cho các thuộc tính đa giá trị

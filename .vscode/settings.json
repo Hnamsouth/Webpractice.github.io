@@ -9,23 +9,10 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "demoSQL",
-            "database": "Students",
-            "username": "hnam",
+            "name": "MySQL",
+            "database": "mydata",
+            "username": "hnam17397",
             "password": "afm17397"
-        },
-        {
-            "mysqlOptions": {
-                "authProtocol": "default"
-            },
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 3306,
-            "driver": "MariaDB",
-            "name": "hsouth97",
-            "username": "hoangnam1997",
-            "database": "student",
-            "password": ""
         }
     ]
 }
