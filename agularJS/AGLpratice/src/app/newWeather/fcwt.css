@@ -15,6 +15,28 @@
     background-color: rgba(255, 255, 255, 0.1);
     border: 2px solid white;
     color: white !important;
+    position: relative;
+    transition: all 0.5s;
+    box-shadow: inset -5px 5px 5px #00033a, inset -5px 4px 10px #6d6b6b, inset -5px 5px 15px #191919;
+    overflow: hidden;
+}
+
+.child:hover {
+    transform: scale(1.03);
+}
+
+.child::after {
+    content: 'Chi tiết';
+    position: absolute;
+    right: 15px;
+    bottom: -25px;
+    font-size: 20px;
+    text-decoration: underline;
+    transition: all 0.6s;
+}
+
+.child:hover::after {
+    bottom: 15px;
 }
 
 .row {

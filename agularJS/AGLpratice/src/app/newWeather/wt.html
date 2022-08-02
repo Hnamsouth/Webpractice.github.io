@@ -5,7 +5,7 @@
         <h2 class="location">{{location?.name}}, {{location?.country}}</h2>
     </div>
     <div class="row" id="asd" style="list-style: none;">
-        <child-fcwt class="col-2 child" *ngFor="let i of array; let j=index" [data]="i" [routerLink]="['/FCWTdetail',j,city]" routerLinkActive="router-link-active">
+        <child-fcwt type="button" class="col-2 child" *ngFor="let i of array; let j=index" [data]="i" [routerLink]="['/FCWTdetail',j,city]" routerLinkActive="router-link-active">
         </child-fcwt>
     </div>
 </div>

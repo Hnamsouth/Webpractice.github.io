@@ -6,7 +6,7 @@ import { ISstudent } from "../interface/student.interface";
   templateUrl:'./clr-cpn.html',
   styleUrls:['./clr.css']
 })
-export class Classroom{
+export class ClassroomComponent{
   // Form
   name = new FormControl('');
   updateName() {

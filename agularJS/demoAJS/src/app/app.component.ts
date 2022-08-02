@@ -1,8 +1,7 @@
-import { HttpClient, ɵHttpInterceptingHandler } from '@angular/common/http';
-import { Component, importProvidersFrom } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component} from '@angular/core';
 import { __importDefault } from 'tslib';
 import { Profile } from './interface/sentItemsDetail';
-import { ISClassname } from './interface/student.interface';
 
 @Component({
   selector: 'app-root',
@@ -14,15 +13,10 @@ export class AppComponent {
   JohnList=['Inbox','Drafts','Deleted Items','Sent Items','OutBox'];
   displayFVR='block';
   displayJohn='none';
- test={
-  name:'hiashdiasnd'
- }
 
   constructor (private asfasf:HttpClient){
-
   }
   show(value:string){
-
     if(value==='displayFVR'){
       this.displayFVR=this.displayFVR==='none'?'block':'none';
     }else if (value==='displayJohn'){

@@ -1,7 +1,7 @@
 import { HttpClient ,HttpParams} from "@angular/common/http";
 import { Component,OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { City, ForeCastWT, List } from "../interface/FCwt";
+import { City, ForeCastWT, List } from "../../../../demoAJS/src/app/interface/FCwt";
 @Component({
   selector:"fc-wt",
   templateUrl:"./wt.html",

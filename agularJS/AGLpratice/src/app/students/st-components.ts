@@ -1,5 +1,5 @@
 import { Component , Input } from "@angular/core";
-import { ISstudent } from "../interface/student.interface";
+import { ISstudent } from "../../../../demoAJS/src/app/interface/student.interface";
 @Component({
   selector:'app-student',
   // khi gọi đên selector đã trọn sẽ lấy nguyên template vào
