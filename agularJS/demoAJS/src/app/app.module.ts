@@ -14,6 +14,7 @@ import { SentsItemsComponent } from './John/sents-items/sents-items.component';
 import { DeletedItemsComponent } from './John/deleted-items/deleted-items.component';
 import { DraftsComponent } from './John/drafts/drafts.component';
 import { OutBoxComponent } from './John/out-box/out-box.component';
+import { TestJSONComponent } from './test-json/test-json.component';
 
 const approuter:Routes=[
 
@@ -31,7 +32,8 @@ const approuter:Routes=[
     DeletedItemsComponent,
     DraftsComponent,
     OutBoxComponent,
-    SentItemsDetailComponent
+    SentItemsDetailComponent,
+    TestJSONComponent
   ],
   imports: [
     BrowserModule,

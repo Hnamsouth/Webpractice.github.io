@@ -8,11 +8,11 @@
             "previewLimit": 50,
             "server": "localhost",
             "port": 3306,
+            "askForPassword": true,
             "driver": "MySQL",
-            "name": "MySQL",
-            "database": "mydata",
-            "username": "hnam17397",
-            "password": "afm17397"
+            "name": "hsouth11",
+            "database": "hsouth",
+            "username": "root"
         }
     ]
 }

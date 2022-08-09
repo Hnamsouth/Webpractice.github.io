@@ -22,11 +22,11 @@ export class SentItemsDetailComponent implements OnInit {
   // Dung local Storge
   constructor(private route:ActivatedRoute, private http:HttpClient) {
     let s=JSON.parse(localStorage.getItem('items')!);
-    console.log(s[0])
+    // console.log(s[0])
     this.route.params.subscribe(param=>{
       this.color=this.allcolor[param['id']];
       this.dataDetails=s[param['id']];
-      console.log(this.dataDetails?.name)
+      // console.log(this.dataDetails?.name)
       this.education=this.dataDetails?.info?.education;
       this.workExpreience=this.dataDetails?.info?.workExpreience;
       this.namejob= this.dataDetails?.info?.workExpreience[0].describe.namejob;
