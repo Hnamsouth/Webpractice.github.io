@@ -6,7 +6,7 @@ import { Profile } from './interface/sentItemsDetail';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css','./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   favoritesList=['Inbox','Sent Items']
