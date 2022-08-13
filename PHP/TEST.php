@@ -21,7 +21,11 @@
     $conn->select_db('test');
     // chon du lieu trong bang
     $query=$conn->query('select * from student');
-    
+    $name=$conn->query('select name from student');
+    $nam1=$name->fetch_object();
+    echo "</br>";
+    var_dump ($nam1);
+    print_r($nam1);
 // 
 $data1 = $query->fetch_all();
 $data2= $query->fetch_array(MYSQLI_NUM);

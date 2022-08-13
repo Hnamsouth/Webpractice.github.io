@@ -12,10 +12,13 @@ import test from './test.json'
 
 export class TestJSONComponent implements OnInit {
   data:ISsentItemDetail=test;
+  time='';
 
   constructor() {
-    console.log(this.data)
+    var tomorrow = new Date();
+  tomorrow.setDate(new Date().getDate()+22);
 
+    console.log(tomorrow)
     console.log(JSON.stringify(test))
    }
 

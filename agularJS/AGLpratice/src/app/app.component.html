@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
                         <a class="nav-link" aria-current="page" routerLink="/weather">Weather <span class="visually-hidden">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a Class class="nav-link" [routerLink]="['class',{outlet:'test'}]">Class</a>
+                        <a Class class="nav-link" routerLink="/class">Class</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/category">Category</a>
@@ -45,7 +45,7 @@
     <div class="body">
         <!-- <router-outlet name="test"></router-outlet>
         <hr> -->
-        <router-outlet></router-outlet>
+        <router-outlet (activate)="onActivate($event)"></router-outlet>
     </div>
 
 </body>

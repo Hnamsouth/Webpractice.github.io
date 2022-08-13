@@ -16,3 +16,12 @@ Hình thoi: Biểu diễn cho các loại mối quan hệ
 Khóa chính: Là các thuộc tính được gạch chân
 
 Hình Ellipses có 2 cạnh: Bểu diễn cho các thuộc tính đa giá trị
+
+1 entity tuong ung 1 back
+1 thuoc tinh tuong ung 1 column
+vs quan he nhieu nhieu se co 1 thuc the de 
+vs thuc the yeu  1-N thi khoa ngoai nam o thuc the yeu
+vs thuc the yeu  N-N thi khoa ngoai nam o thuc the CHINH
+
+Trong SQL server để lưu chữ dữ liệu bằng tiếng việt thì thêm n phía trước chả or varchar: nchar -- nvarchar
+Khoa ngoai co the khac ten nhung phai cung kieu du lieu

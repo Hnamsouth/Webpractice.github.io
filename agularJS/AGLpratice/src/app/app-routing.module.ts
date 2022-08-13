@@ -7,7 +7,7 @@ import { FCWT } from './newWeather/fcwt';
 
 const routes: Routes = [
   {path:'weather',component:FCWT},
-  {path:'class',component:ClassroomComponent,outlet:'test'},
+  {path:'class',component:ClassroomComponent},
   {path:'FCWTdetail/:id/:city',component:FCWTdetailComponent},
   {path:'categorychild',component:CategoryComponent},
   {path:'category',component:CategoryComponent},
