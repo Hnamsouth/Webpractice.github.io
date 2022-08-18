@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="text" id="">
+    <a href="#" class="say">Speech !!</a>
+
+    <audio src="" class="speech" hidden></audio>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+<script>
+    $(function() {
+        $('a.say').on('click', function(e) {
+            e.preventDefault();
+            var text = $('input[name="text"').val(); //hoang nama
+            text = encodeURIComponent(text); //hoang%20nama
+            console.log(text)
+            var url = "https://translate.google.com.vn/?hl=vi&tab=TT&sl=en&tl=vi&text=" + text + "";
+            $('audio.speech').attr('src', url).get(0).play();
+        });
+    });
+</script>
+
+</html>

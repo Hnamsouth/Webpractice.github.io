@@ -1,0 +1,26 @@
+{
+  "name": "webpractice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hnamsouth/Webpractice.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hnamsouth/Webpractice.github.io/issues"
+  },
+  "homepage": "https://github.com/Hnamsouth/Webpractice.github.io#readme",
+  "dependencies": {
+    "mssql": "^9.0.0",
+    "tedious": "^15.0.1"
+  }
+}
