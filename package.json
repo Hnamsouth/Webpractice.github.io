@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Hnamsouth/Webpractice.github.io#readme",
   "dependencies": {
+    "express": "^4.18.1",
     "mssql": "^9.0.0",
     "tedious": "^15.0.1"
   }
