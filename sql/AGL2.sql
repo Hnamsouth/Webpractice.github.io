@@ -41,13 +41,6 @@ CREATE TABLE PRODUCT_ORDERS
 	--CustemersID varchar(11) constraint C_PO_CTM FOREIGN KEY REFERENCES CUSTEMERS(PhoneNB) CHECK(CustemersID LIKE '09%[0-9]')
 )
 -- TABLE-5
-/*
-CREATE TABLE TOTAL_PRODUCT_ORDERS
-(
-	TPO INT constraint C_TPO_ORDER FOREIGN KEY REFERENCES PRODUCT_ORDERS(PO_ID),
-
-	TOTALORDER INT NOT NULL
-)*/
 
 -- INSERT CUSTEMERS 
 
@@ -138,10 +131,3 @@ WHERE OrderID = 123
 	(SELECT ORDERS.OrderID FROM ORDERS)
 	GROUP BY OrderID 
 
---a) Viết câu lệnh để thay đổi trường giá tiền của từng mặt hàng là dương(>0).
-	ALTER TABLE PRODUCT
-	ALTER COLUMN PRICE ADD CONSTRAINT C_PR_PRICE CHECK(PRICE >0)
-
---b) Viết câu lệnh để thay đổi ngày đặt hàng của khách hàng phải nhỏ hơn ngày hiện tại.
-	
---c) Viết câu lệnh để thêm trường ngày xuất hiện trên thị trường của sản phẩm.
