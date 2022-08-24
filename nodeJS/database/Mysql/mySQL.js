@@ -7,14 +7,14 @@ var mysql = require('mysql');
 var con = mysql.createConnection({
     host: "127.0.0.1",
     user: "root",
-    password: "AFMhn17397!@#",
+    password: "", //AFMhn17397!@#
     database: "test",
-    port: '1997'
+    port: '3306'
 });
 
 con.connect(function(err) {
     if (err) throw err;
-    con.query("SELECT * FROM student", function(err, result, fields) {
+    con.query("SELECT * FROM students", function(err, result, fields) {
         if (err) throw err;
         //console.log(result);
         console.table(result);
