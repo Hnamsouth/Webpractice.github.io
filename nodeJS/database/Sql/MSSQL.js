@@ -47,10 +47,13 @@ app.get('/', (req, res) => {
         user: 'hsouth',
         password: 'AFMhn17397',
         server: 'localhost',
-        database: 'Custemers',
+        database: 'AGM3',
         // Custemers
         synchronize: true,
         trustServerCertificate: true,
+        multipleStatements: true,
+        port: 1433
+
     };
 
     sql.connect(config, err => {
@@ -58,30 +61,33 @@ app.get('/', (req, res) => {
         // create a new Request object
         let sqlRequest = new sql.Request();
         // query to the database and get the records /fields in the data Object
-        let sqlQuery = 'select * from Numbers';
+        let sqlQuery = "SELECT * FROM BRAND;SELECT * FROM PRODUCT";
+        let qr2 = ['PRODUCT'];
         sqlRequest.query(sqlQuery, (err, data) => {
             if (err) console.log(err);
             // display data
-            console.table(data.recordset);
-            console.groupCollapsed
-                //console.log(data);
-                //close the Connection
+            //console.table(data.recordset);
+            console.log(data);
+            //close the Connection
             sql.close();
         })
     })
-
+})
+var server = app.listen(5000, () => {
+        console.log('server running..');
+    })
     /*
-    // // connect to database
-    // sql.connect(config, err => {
-    //     if (err) console.log(err);
-    //     //create request object
-    //     var request = new sql.Request();
+    * // connect to database
+    sql.connect(config, err => {
+        if (err) console.log(err);
+            //create request object
+        var request = new sql.Request();
 
-    //     // query to database and get the records
-    //     request.query('select * form Custemers', (err, recordset) => {
-    //         if (err) console.log(err);
-    //         console.log(recordset)
-    //     })
+         // query to database and get the records
+        request.query('select * form Custemers', (err, recordset) => {
+            if (err) console.log(err);
+            console.log(recordset)
+        })
     // })
 
     // sql.connect(config).then(pool => {
@@ -94,10 +100,3 @@ app.get('/', (req, res) => {
     //     console.log(err)
     // })
 */
-
-
-
-})
-var server = app.listen(5000, () => {
-    console.log('server running..');
-})
