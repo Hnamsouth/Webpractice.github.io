@@ -1,0 +1,146 @@
+usefull:
+
+-- npm init
+Create a package.json file
+-- npm install
+Install a package
+-- npm stars
+View packages marked as favorites
+-- npm start
+Start a package
+-- npm stop
+Stop a package
+
+
+"start": "nodemon --exec babel-node src/server.js" :thêm vào script trong package.json để thực hiện 
+
+ --- nodemon giúp server tự động restart khi thay đổi code. babel. 
+giúp phân tích chuyển đổi cú pháp mới từ ng dùng thành cú pháp cũ hơn để tương thích với các môi trường JavaScript cũ hơn
+
+// import thư viện express cú pháp cũ
+// express Express :giúp làm  nhanh,  đơn giản hóa  , tối giản cho Node.js
+// ---- npm install express
+
+/*  tạo 1 biến gán giá trị là hàm express để gọi các yêu cầu tới express*/
+// ----   npm i --save-exact ejs@3.1.8  (install viewengine ejs)
+
+/*viewengin sử lý các điều kiện logic bên trong html(chạy javascript ngay bên trong các thẻ htlm)*/
+// install body-parser :
+---- npm i --save-exact body-parser@1.20.0
+/*dùng để phân tích cú pháp chuyển đổi data thành json */
+
+// install nodemore: tự động restart lại server
+---- npm i --save-exact nodemon@2.0.19 
+
+--- npm install --save-exact @babel/core@7.18.13 @babel/node@7.18.10 @babel/preset-env@7.18.10
+/*“Babel là một trình biên dịch Javascript mã nguồn mở và miễn phí có chức năng chính dùng để biên dịch ECMAScript thành phiên bản tương thích ngược cho JavaScript
+ có thể chạy trên các môi trường JavaScript cũ hơn. 
+ Babel là công cụ phổ biến để sử dụng các tính năng mới nhất của Javascript.”*/
+-- npm
+JavaScript package manager
+-- npm access
+Set access level on published packages
+-- npm adduser
+Add a registry user account
+-- npm audit
+Run a security audit
+-- npm bin
+Display npm bin folder
+--npm bugs
+Bugs for a package in a web browser maybe
+-- npm build
+Build a package
+-- npm bundle
+Removed
+-- npm cache
+Manipulates packages cache
+-- npm ci
+Install a project with a clean slate
+-- npm completion
+Tab completion for npm
+-- npm config
+Manage the npm configuration files
+-- npm dedupe
+Reduce duplication
+-- npm deprecate
+Deprecate a version of a package
+-- npm dist-tag
+Modify package distribution tags
+-- npm docs
+Docs for a package in a web browser maybe
+-- npm doctor
+Check your environments
+-- npm edit
+Edit an installed package
+-- npm explore
+Browse an installed package
+-- npm fund
+Retrieve funding information
+-- npm help
+Search npm help documentation
+-- npm help-search
+Get help on npm
+-- npm hook
+Manage registry hooks
+-- npm install-ci-test
+Install a project with a clean slate and run tests
+-- npm install-test
+Install package(s) and run tests
+-- npm link
+Symlink a package folder
+-- npm logout
+Log out of the registry
+-- npm ls
+List installed packages
+-- npm org
+Manage orgs
+-- npm outdated
+Check for outdated packages
+-- npm owner
+Manage package owners
+-- npm pack
+Create a tarball from a package
+-- npm ping
+Ping npm registry
+-- npm prefix
+Display prefix
+-- npm profile
+Change settings on your registry profile
+-- npm prune
+Remove extraneous packages
+-- npm publish
+Publish a package
+-- npm rebuild
+Rebuild a package
+-- npm repo
+Open package repository page in the browser
+-- npm restart
+Restart a package
+-- npm root
+Display npm root
+-- npm run-script
+Run arbitrary package scripts
+-- npm search
+Search for packages
+-- npm shrinkwrap
+Lock down dependency versions for publication
+-- npm star
+Mark your favorite packages
+-- npm team
+Manage organization teams and team memberships
+-- npm test
+Test a package
+-- npm token
+Manage your authentication tokens
+-- npm uninstall
+Remove a package
+-- npm unpublish
+Remove a package from the registry
+-- npm update
+Update a package
+-- npm version
+Bump a package version
+-- npm view
+View registry info
+-- npm whoami
+Display npm username
