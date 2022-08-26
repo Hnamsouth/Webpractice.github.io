@@ -5,6 +5,8 @@
 import express from 'express';
 import configViewengine from './config/viewEngine';
 import mysql from 'mysql2'
+import 'dotenv/config' // 
+// Dotenv là một mô-đun không phụ thuộc, tải các biến môi trường từ một .envtệp vào process.env. Lưu trữ cấu hình trong môi trường tách biệt
 // ---- npm install express
 /*  tạo 1 biến gán giá trị là hàm express để gọi các yêu cầu tới express*/
 // ----   npm i --save-exact ejs@3.1.8  (install viewengine ejs)
@@ -19,7 +21,7 @@ const app = express()
     // khi chạy trên localhost thì sẽ có các trên máy sẽ có nhiều project chạy các cổng khác nhau, nên đặt cổng nào ko bị chùng
     //const port = 1234 //  nếu set port ngay tại file server.js thì chỉ cần const port = 1234
     // set port tại file evn 
-const port = process.env.PORT || 1234;
+const port = process.env.PORT;
 // thêm các route gần tương tự như angular 
 // gọi đến express với phương thức get với đường dẫn rỗng hoặc any và hàm callback sẽ thực hiện 2 action
 // request :  yêu cầu tới server và response : phản hồi từ server
