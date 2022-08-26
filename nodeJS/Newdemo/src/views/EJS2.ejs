@@ -8,9 +8,60 @@
     <!-- vì static file đã dẫn tới thư mục public nên chỉ cần chỉ dẫn từ public vào bên trong -->
     <link rel="stylesheet" href="/css/staticFile.css">
 </head>
+<style>
+    table,
+    td,
+    th {
+        border: 1px solid;
+    }
+    
+    .tb1 {
+        border-collapse: collapse;
+    }
+    
+    .tbrow:hover {
+        background: rgb(222, 222, 222);
+    }
+</style>
 
 <body>
     <h1>hello EJS</h1>
+    <%=data %>
+
+        <table class="tb1">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>STN_Name</th>
+                    <th>Age</th>
+                    <th>ClassID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%for(let i of dataoj){ %>
+                    <tr class="tbrow">
+                        <td>
+                            <%= i.id %>
+                        </td>
+                        <td>
+                            <%= i.STN_Name%>
+                        </td>
+                        <td>
+                            <%= i.Age%>
+                        </td>
+                        <td>
+                            <%= i.ClassID%>
+                        </td>
+                        <td>
+                            <button type="button">Detail</button>
+                            <button type="button">edit</button>
+                            <button type="button">delete</button>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+
 
 </body>
 

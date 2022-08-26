@@ -16,6 +16,7 @@ Stop a package
 
  --- nodemon giúp server tự động restart khi thay đổi code. babel. 
 giúp phân tích chuyển đổi cú pháp mới từ ng dùng thành cú pháp cũ hơn để tương thích với các môi trường JavaScript cũ hơn
+// Dotenv là một mô-đun không phụ thuộc, tải các biến môi trường từ một .envtệp vào process.env. Lưu trữ cấu hình trong môi trường tách biệt
 
 // import thư viện express cú pháp cũ
 // express Express :giúp làm  nhanh,  đơn giản hóa  , tối giản cho Node.js
