@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a href="#" class="nav-link active">Active</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Action</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">Another link</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link disabled">Disabled</a>
+        </li>
+    </ul>
+    <div class="container">
+        <form>
+            <div class="mb-3 row">
+                <label for="inputName" class="col-xs-4 col-form-label">Name</label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Name">
+                </div>
+                <label for="inputAge" class="col-xs-4 col-form-label">Age</label>
+                <div class="col-xs-8">
+                    <input type="number" class="form-control" name="inputAge" id="inputName" placeholder="Age">
+                </div>
+                <label for="inputemail" class="col-xs-4 col-form-label">Email</label>
+                <div class="col-xs-8">
+                    <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="Email">
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <div class="offset-sm-4 col-sm-8">
+                    <button type="submit" class="btn btn-primary">submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <table class="tb1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>STN_Name</th>
+                <th>Age</th>
+                <th>ClassID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%for(let i of data2){ %>
+                <tr class="tbrow">
+                    <td>
+                        <%= i.id %>
+                    </td>
+                    <td>
+                        <%= i.STN_Name%>
+                    </td>
+                    <td>
+                        <%= i.Age%>
+                    </td>
+                    <td>
+                        <%= i.ClassID%>
+                    </td>
+                    <td>
+                        <button type="button">Detail</button>
+                        <button type="button">edit</button>
+                        <button type="button">delete</button>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">...</div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">...</div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div>
+        <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">...</div>
+    </div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+</html>

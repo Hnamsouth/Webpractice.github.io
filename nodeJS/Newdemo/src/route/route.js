@@ -4,22 +4,24 @@ import homecontroller from '../controller/homecontroller'
 let route = express.Router();
 
 const createroute = (app) => {
-    route.get('/', (req, res) => {
-        // khi đường dẫn rỗng: localhost/ 
-        // response : các phản hồi thương sử dụng(send,status,json,sendFile,redirect..)
-        //res.send('Hello World!');
-        // request : các yêu cầu thương sử dụng(param,body,query,url,header..)
-        res.render('../views/demohtml.ejs')
-    })
-    route.get('/demo', (req, res) => {
-        res.send('Hello demo1!')
-    })
-    route.get('/demoEJS', (req, res) => {
-            res.render('EJS2.ejs')
+    // khi đường dẫn rỗng: localhost/ 
+    // response : các phản hồi thương sử dụng(send,status,json,sendFile,redirect..)
+    //res.send('Hello World!');
+    // request : các yêu cầu thương sử dụng(param,body,query,url,header..)
+    // nói cho express biết là chạy tren cổng nào , và tham số thứ 2 là hàm callback , chỉ khi nào server chạy trên cổng này thì mới thực thi
+
+    route.get('/', (req, res) => { res.render('../views/demohtml.ejs') })
+    route.get('/demo', (req, res) => { res.send('Hello demo1!') })
+    route.get('/demoEJS', (req, res) => { res.render('EJS2.ejs') })
+    route.get('/conn1', homecontroller.testparam)
+    route.get('/conn2', homecontroller.testparam2)
+    route.get('/conn3', homecontroller.testparam3)
+    route.get('/testapi2', (req, res) => {
+        condb4.query('select * from id', (err, data) => {
+            console.log(data);
+            res.send(data)
         })
-        // nói cho express biết là chạy tren cổng nào , và tham số thứ 2 là hàm callback , chỉ khi nào server chạy trên cổng này thì mới thực thi
-    route.get('/ctldemo', homecontroller.homepage)
-    route.get('/ejstest', homecontroller.ejstest)
+    })
 
 
     return app.use("/", route)
