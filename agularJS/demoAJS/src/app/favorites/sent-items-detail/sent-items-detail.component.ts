@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Education, ISsentItemDetail, Profile, WorkExpreience } from 'src/app/interface/sentItemsDetail';
+import axios from 'axios';
 
 @Component({
   selector: 'app-sent-items-detail',
@@ -31,13 +32,27 @@ export class SentItemsDetailComponent implements OnInit {
       this.workExpreience=this.dataDetails?.info?.workExpreience;
       this.namejob= this.dataDetails?.info?.workExpreience[0].describe.namejob;
     });
+// get data with  httpclient
+    this.http.get<any>('http://localhost:1234/get-api').subscribe(value=>{
+      console.log(value)
+    })
+    this.http.post(`http://localhost:1234/post-api`,{Age:12,ClassID:2,STN_Name:'angular'}).subscribe(vl=>{
+      console.log(vl)
+    })
+// get data with axios
+    axios.get('http://localhost:1234/get-api').then(res=>{
+      console.log(res.data)
+    }).catch((err)=>{console.log(err)})
     }
 
   ngOnInit(): void {
+    // get params from domain . vd user/detailuser/1: params : detailuser & 1
     // this.route.params.subscribe(param=>{
+    //   // get api
     //   this.http.get<Profile[]>(this.url)
     //   .subscribe(value =>{
     //     value.forEach((elm,index )=>{
+    //       // check id
     //       if(index==param['id']){
     //         this.dataDetails=elm;
     //         this.education=elm?.info?.education;

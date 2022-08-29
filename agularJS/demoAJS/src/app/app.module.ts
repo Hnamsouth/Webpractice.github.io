@@ -15,7 +15,6 @@ import { DeletedItemsComponent } from './John/deleted-items/deleted-items.compon
 import { DraftsComponent } from './John/drafts/drafts.component';
 import { OutBoxComponent } from './John/out-box/out-box.component';
 import { TestJSONComponent } from './test-json/test-json.component';
-
 const approuter:Routes=[
 
 
