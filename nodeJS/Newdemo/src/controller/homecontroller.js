@@ -45,8 +45,9 @@ var conn3 = async(req, res) => {
 }
 var connPostSTD = async(req, res) => {
     // get user input
-    let { name, age, classid } = req.body;
+    let { name, age, classid, optionClassId } = req.body;
     // check user input
+    console.log(req.body)
     if (!name || !age || !classid) {
         let messerr = "miss params"
         return res.redirect('/conn1?postERR=1') ///conn1?smErr=1
@@ -71,6 +72,7 @@ var deleteUser = async(req, res) => {
     await pool.promise().query("delete from students where id = ?", [id])
     return res.redirect("/conn1")
 }
+
 
 
 module.exports = {

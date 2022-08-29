@@ -47,19 +47,19 @@
 <body>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a href="#" class="nav-link active">Active</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Action</a>
-            </div>
+            <a href="#" class="nav-link active">Test CRUD</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">Another link</a>
+            <a href="#" class="nav-link">NOne</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">API Test</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/get-api">Method GET</a>
+                <a class="dropdown-item" href="/post-api">Method Post</a>
+                <a class="dropdown-item" href="/put-api">Method Put</a>
+                <a class="dropdown-item" href="/delete-api">Method Delete</a>
+            </div>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link disabled">Disabled</a>
@@ -88,6 +88,15 @@
                 <div class="col-xl-4">
                     <label>ClassID: </label>
                     <input class="inpuser" type="number" name="classid" placeholder="ClassID" value="<%=stas==true?dtEdit[0].ClassID:'' %>">
+                </div>
+                <div class="col-xl-4">
+                    <label>ClassID: </label>
+                    <!-- <input class="inpuser" type="number" name="classid" placeholder="ClassID" value="<%=stas==true?dtEdit[0].ClassID:'' %>"> -->
+                    <select name="optionClassId" a>
+                        <option  value="1" >1</option>
+                        <option value="2" >2</option>
+                        <option value="3">3</option>
+                    </select>
                 </div>
             </div>
             <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert" <%=SMerr!==true? 'hidden': ''%>>
