@@ -23,6 +23,7 @@ var postAPI = async(req, res) => {
         }
         let check = await pool.promise().query('insert into `students`(STN_Name,Age,ClassID) values(?,?,?)', [STN_Name, Age, ClassID])
         res.status(200).json({ mess: "create user complete" })
+
     }
     // 
 var putAPI = async(req, res) => {
@@ -30,8 +31,13 @@ var putAPI = async(req, res) => {
         if (!id || !STN_Name || !Age || !ClassID) {
             res.status(200).json({ mess: "Miss required params" })
         }
-        await pool.promise().query('update students set STN_Name=?,Age=?,ClassID=? where id=?', [STN_Name, Age, ClassID, id])
-        res.status(200).json({ mess: "update user complete" })
+
+        let check = await pool.promise().query('update students set STN_Name=?,Age=?,ClassID=? where id=?', [STN_Name, Age, ClassID, id])
+        if (check) {
+            res.status(200).json({ mess: "update user complete" })
+        } else {
+            res.status(404).json({ mess: "update user err" })
+        }
     }
     // 
 var deleteAPI = async(req, res) => {
@@ -42,11 +48,26 @@ var deleteAPI = async(req, res) => {
     await pool.promise().query("delete from students where id = ?", [id])
     res.status(200).json({ mess: "delete user complete" })
 }
+var getIMG = async(req, res) => {
+    let [rows, fields] = await pool.promise().query('select * from newtest');
+    res.status(200).json({ mess: "get user complete", data: rows })
+        // console.log(rows)
+}
+var postIMG = async(req, res) => {
+    let check2 = req.body;
+    console.log(check2)
+        // let check = await pool.promise().query('insert into newtest(longtextimg) values(?)', [req.body.longtextimg])
+        // res.status(200).json({ mess: "create user complete" })
+
+}
+
 
 
 module.exports = {
     getAPI,
     postAPI,
     putAPI,
-    deleteAPI
+    deleteAPI,
+    getIMG,
+    postIMG
 }

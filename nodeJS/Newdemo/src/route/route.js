@@ -21,6 +21,9 @@ const createroute = (app) => {
     route.get('/delete/:id', homecontroller.deleteUser)
 
 
+    route.get('/selectdata', homecontroller.selectdata)
+
+
 
 
     route.get('/testapi2', (req, res) => {

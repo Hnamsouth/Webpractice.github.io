@@ -9,7 +9,8 @@ var homepage = (req, res) => {
 
 var conn1 = async(req, res, test) => {
     const [rows, fields] = await pool.promise().query('select * from students');
-    // check editUser id
+    console.log(rows)
+        // check editUser id
     let editUserId = req.query.id
         //check post users
     let PostErr = req.query.postERR === undefined ? false : true;
@@ -72,6 +73,11 @@ var deleteUser = async(req, res) => {
     await pool.promise().query("delete from students where id = ?", [id])
     return res.redirect("/conn1")
 }
+var selectdata = async(req, res) => {
+    const [rows, fields] = await pool.promise().query("select * from students");
+    console.log(rows)
+    return res.send({ data: rows })
+}
 
 
 
@@ -82,5 +88,6 @@ module.exports = {
     conn3,
     connPostSTD,
     deleteUser,
-    connEditSTD
+    connEditSTD,
+    selectdata
 }

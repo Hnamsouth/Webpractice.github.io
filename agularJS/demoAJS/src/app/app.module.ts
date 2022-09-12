@@ -40,7 +40,7 @@ const approuter:Routes=[
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule,
+    // RouterModule,
 
     // su dung dieu khien Form
 

@@ -18,8 +18,8 @@ export class TestJSONComponent implements OnInit {
     var tomorrow = new Date();
   tomorrow.setDate(new Date().getDate()+22);
 
-    console.log(tomorrow)
-    console.log(JSON.stringify(test))
+    // console.log(tomorrow)
+    // console.log(JSON.stringify(test))
    }
 
   ngOnInit(): void {

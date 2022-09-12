@@ -24,6 +24,8 @@ export class SentItemsDetailComponent implements OnInit {
   constructor(private route:ActivatedRoute, private http:HttpClient) {
     let s=JSON.parse(localStorage.getItem('items')!);
     // console.log(s[0])
+    this.route.snapshot
+    console.log( this.route.snapshot)
     this.route.params.subscribe(param=>{
       this.color=this.allcolor[param['id']];
       this.dataDetails=s[param['id']];
@@ -32,17 +34,31 @@ export class SentItemsDetailComponent implements OnInit {
       this.workExpreience=this.dataDetails?.info?.workExpreience;
       this.namejob= this.dataDetails?.info?.workExpreience[0].describe.namejob;
     });
-// get data with  httpclient
+
+// get data with  httpclient from api
     this.http.get<any>('http://localhost:1234/get-api').subscribe(value=>{
-      console.log(value)
+        console.log(value)
     })
+
     this.http.post(`http://localhost:1234/post-api`,{Age:12,ClassID:2,STN_Name:'angular'}).subscribe(vl=>{
-      console.log(vl)
+        console.log(vl)
+    },err=>{
+      console.log(err)
     })
-// get data with axios
+// get data with axios from api
     axios.get('http://localhost:1234/get-api').then(res=>{
-      console.log(res.data)
-    }).catch((err)=>{console.log(err)})
+      console.log(res.data);
+    }).catch((err)=>{console.log(err)});
+
+    axios.post('http://localhost:1234/post-api',{Age:12,ClassID:2,STN_Name:'angular'}).then(res=>{
+      console.log(res);
+    }).catch(err=>{
+      console.log(err);
+    })
+//
+// axios.post(`http://localhost:1234/post-api`).
+
+
     }
 
   ngOnInit(): void {

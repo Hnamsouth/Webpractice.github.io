@@ -16,6 +16,7 @@ export class AppComponent {
 
   constructor (private asfasf:HttpClient){
   }
+
   show(value:string){
     if(value==='displayFVR'){
       this.displayFVR=this.displayFVR==='none'?'block':'none';
@@ -26,7 +27,7 @@ export class AppComponent {
   render(){
     let url='http://localhost:3000/profile';
     this.asfasf.get<Profile>(url).subscribe(dasdsad =>{
-      console.log(dasdsad)
+      // console.log(dasdsad)s
     })
   }
 }

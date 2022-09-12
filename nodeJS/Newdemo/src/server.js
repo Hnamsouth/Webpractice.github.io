@@ -7,8 +7,14 @@ import configViewengine from './config/viewEngine';
 import 'dotenv/config' // 
 import createroute from './route/route'
 import createRoute from './route/api.js';
+import conDA from './config/conDoAn';
+import bodyParser from 'body-parser';
+import routeUSER from './route/routDOAN';
+
+
 
 const app = express()
+app.use(bodyParser.text({ limit: '50mb' }));
 const port = process.env.PORT;
 
 // giúp chuyền data từ client lên db
@@ -21,13 +27,14 @@ app.use(function(req, res, next) {
     next();
 });
 
-// declare route view engine (EJS)
+
 configViewengine(app);
 // declare route WEB
 createroute(app);
 // declare route API
 createRoute(app);
-
+//  declare route API Eproject
+routeUSER(app);
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })

@@ -9,6 +9,10 @@ const createroute = (app) => {
     route.put('/put-api', apiCtl.putAPI)
     route.delete('/delete-api/:id', apiCtl.deleteAPI)
 
+    route.get('/get-img', apiCtl.getIMG)
+    route.post('/post-img', apiCtl.postIMG)
+
+
     return app.use("/", route)
 }
 
