@@ -24,11 +24,31 @@
     </style>
 </head>
 
+
 <body data-new-gr-c-s-check-loaded="14.1080.0" data-gr-ext-installed="">
     <video autoplay name="media" playsinline="playsinline" controls class="margin:0 auto">
-        <source src="./video/keansburgvid.mp4" type="video/mp4">
+        <source id="vdsrc" type="video/mp4">
     </video>
 </body>
 <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+<script>
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+    var url = `http://127.0.0.1:3006/html-css-js/video1.html`
+    var video = getParameterByName('video');
+    video == '' ? video = 1 : video = video;
+    console.log(video)
+        // .setAttribute('src', `./video/keansburg${video}.mp4`)
+    var source = document.getElementById('vdsrc');
+    source.setAttribute('src', `./video/keansburg${video}.mp4`)
+    console.log(source)
+</script>
 
 </html>
