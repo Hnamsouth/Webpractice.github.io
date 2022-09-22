@@ -25,8 +25,8 @@
 </head>
 
 
-<body data-new-gr-c-s-check-loaded="14.1080.0" data-gr-ext-installed="">
-    <video autoplay name="media" playsinline="playsinline" controls class="margin:0 auto">
+<body data-new-gr-c-s-check-loaded="14.1080.0" data-gr-ext-installed>
+    <video name="media" controls>
         <source id="vdsrc" type="video/mp4">
     </video>
 </body>
@@ -41,7 +41,7 @@
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
-    var url = `http://127.0.0.1:3006/html-css-js/video1.html`
+    //var url = `http://127.0.0.1:3006/html-css-js/video1.html`
     var video = getParameterByName('video');
     video == '' ? video = 1 : video = video;
     console.log(video)
