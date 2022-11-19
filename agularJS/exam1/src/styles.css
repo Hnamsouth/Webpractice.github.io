@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+.employ {
+    border: none;
+    display: flex;
+    padding: 0.5em;
+    background: white;
+}
+
+.employ:hover {
+    background: rgb(20, 108, 207);
+}
+
+.avata {
+    border-radius: 50%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+td {
+    border: 1px solid black;
+}
+
+.tableInfo {
+    width: 100%;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.nameEpl {
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 18px;
+}

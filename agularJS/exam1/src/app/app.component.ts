@@ -12,7 +12,7 @@ export class AppComponent {
   datainfo:Profile|undefined;
   data=[
     {
-      name: "Michale Suyama",
+      name: "Margaret",
       title: "Sales Respresentative",
       date: "10/5/1996",
       address: "7 Houndtood Rd",
@@ -20,7 +20,7 @@ export class AppComponent {
       Phone: "(71) 555-4444",
       img: "assets/img/human2.png",
     },{
-      name: "Michale Suyama 1",
+      name: "Albert",
       title: "Sales Respresentative",
       date: "10/5/1996",
       address: "7 Houndtood Rd",
@@ -29,7 +29,7 @@ export class AppComponent {
       img: "assets/img/human3.png",
     },
     {
-      name: "Michale Suyama 2",
+      name: "Michale",
       title: "Sales Respresentative",
       date: "10/5/1996",
       address: "7 Houndtood Rd",
